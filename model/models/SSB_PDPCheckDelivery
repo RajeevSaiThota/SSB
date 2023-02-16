@@ -1,0 +1,51 @@
+{
+	"module": "SSBPDPCheckDelivery",
+	"models": [
+		{
+			"name": "VerifyDeliveryCheck",
+			"elements": [
+				{
+					"key": "SearchBarPLP",
+					"value": "//input[@placeholder='Tell us what are you looking for']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductCardClick",
+					"value": "//a[@class='MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1me2eo7']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "DeliveryCheckBar",
+					"value": "(//input[@id='standard-name'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ChangeButton",
+					"value": "//button[normalize-space()='CHANGE']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "StandardDelivery",
+					"value": "//input[@value='Standard Delivery']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ExpressDelivery",
+					"value": "//input[@value='Express Delivery']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PayandPickUp",
+					"value": "//label[@class='MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementEnd css-y95qgz']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

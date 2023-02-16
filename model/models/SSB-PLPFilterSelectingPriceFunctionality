@@ -1,0 +1,28 @@
+{
+	"module": "PLPPriceFilterFunctionality",
+	"models": [
+		{
+			"name": "PriceFilterFunctionality",
+			"elements": [	
+			    {
+					"key": "ViewMoreSelection",
+					"value": "//p[text()='VIEW MORE']",
+					"type": "XPATH"
+				},
+			    			    
+			    {
+					"key": "PriceCategorySelection",
+					"value": "//p[text()='Price']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClearAll",
+					"value": "//p[text()='CLEAR ALL']",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

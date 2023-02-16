@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web Checkout">
+<listeners>
+       <listener class-name="com.sslweb.automation.listeners.PDFReport" />
+       <listener class-name="com.sslweb.automation.test.ApplicationContextInitializer" />
+	</listeners>
+  <test name="SSB Checkout Payment Test Scripts" allow-return-values="true">
+    <classes>
+      <class name="com.techouts.ssbweb.testscripts.CheckoutPage.SSBCheckoutPageCreditCardPayTest"/>
+      <class name="com.techouts.ssbweb.testscripts.CheckoutPage.SSBCheckoutPageDebitCardPayTest"/>
+       <class name="com.techouts.ssbweb.testscripts.CheckoutPage.SSBCheckoutPageNetBankingTest"/>
+       <class name="com.techouts.ssbweb.testscripts.CheckoutPage.SSBCheckoutPageUPITest"/>
+       <class name="com.techouts.ssbweb.testscripts.CheckoutPage.SSBCheckoutPageWalletTest"/>
+       <class name="com.techouts.ssbweb.testscripts.CheckoutPage.SSBCheckoutPageCODTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

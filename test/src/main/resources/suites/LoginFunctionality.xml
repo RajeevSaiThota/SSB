@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="WEB Login Functionality Suite">
+	<listeners>
+       <listener class-name="com.sslweb.automation.listeners.PDFReport" />
+       <listener class-name="com.sslweb.automation.test.ApplicationContextInitializer" />
+	</listeners>
+	<test name="SSB Login TestScripts" allow-return-values="true">
+
+    <classes>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginFunctionalityMobileNumberTest"/>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginInvalidMobileNumber"/>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginFunctionalityInvalidOTP"/>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginResendOTPFunctionalityMobileNumberTest"/>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginFunctionalityFacebookTest"/>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBRegistrationFunctionalityTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- LoginFunctionalitySuite -->

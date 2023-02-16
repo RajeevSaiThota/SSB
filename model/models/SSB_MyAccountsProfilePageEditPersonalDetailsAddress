@@ -1,0 +1,48 @@
+{
+	"module": "MyAccountProfilePagePersonalDetails",
+	"models": [
+		{
+			"name": "PersonalDetailsEdit",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MyProfileClick",
+					"value": "//li[text()='My Profile']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PersonalDetailsClick",
+					"value": "//p[text()='Edit Personal Details']",
+					"type": "XPATH"
+				},
+				{
+					"key": "CancelName",
+					"value": "//button[@aria-label='toggle clear ']//*[name()='svg']",
+					"type": "XPATH"
+				},
+				{
+					"key": "NameBar",
+					"value": "//input[@name='firstName']",
+					"type": "XPATH"
+				},
+				{
+					"key": "Gender",
+					"value": "//input[@value='Male']",
+					"type": "XPATH"
+				},
+				{
+					"key": "MakeChanges",
+					"value": "(//button[@type='submit'])[1]",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

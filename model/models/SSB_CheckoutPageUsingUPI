@@ -1,0 +1,35 @@
+{
+	"module": "CheckoutPageUsingUPI",
+	"models": [
+		{
+			"name": "CheckoutFlowUPI",
+			"elements": [
+							
+				{
+					"key": "UPIClick",
+					"value": "//div[text()='UPI']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EnterUPI",
+					"value": "//input[@placeholder='Enter UPI ID Here']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "VerifyButton",
+					"value": "//button[text()='VERIFY']",
+					"type": "XPATH"
+				},
+				{
+					"key": "PayNowClick",
+					"value": "//button[text()='PAY NOW']",
+					"type": "XPATH"
+				},
+				
+				
+			]
+		}
+	]
+}

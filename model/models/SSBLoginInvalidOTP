@@ -1,0 +1,39 @@
+{
+	"module": "LoginUsingInvalidOTP",
+	"models": [
+		{
+			"name": "LoginInvalidOTP",
+			"elements": [
+				{
+					"key": "SignIn",
+					"value": "//p[text()='Sign In']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserNameTypeIn",
+					"value": "//input[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProceedButton",
+					"value": "//button[text()='PROCEED']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PasswordTypeIn",
+					"value": "//input[@id='mui-1']",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogInButton",
+					"value": "//button[normalize-space()='Verify OTP']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

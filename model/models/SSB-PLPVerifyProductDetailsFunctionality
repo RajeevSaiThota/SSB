@@ -1,0 +1,28 @@
+{
+	"module": "PLPVerifyDetailsFunctionality",
+	"models": [
+		{
+			"name": "VerifyDetailsFunctionality",
+			"elements": [	
+			    {
+					"key": "MouseHoverProductCard",
+					"value": "(//a[@target='_blank'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "QuickViewClick",
+					"value": "//p[text()='Quick View']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ViewProductClick",
+					"value": "//p[text()='VIEW PRODUCT DETAILS']",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

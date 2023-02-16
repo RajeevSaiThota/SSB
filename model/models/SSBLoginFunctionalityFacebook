@@ -1,0 +1,49 @@
+{
+	"module": "UserLoginFunctionalityFacebook",
+	"models": [
+		{
+			"name": "FacebookLoginFunctionality",
+			"elements": [
+				{
+					"key": "SignIn",
+					"value": "//p[text()='Sign In']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "FacebookIconClick",
+					"value": "//div[@role='presentation']//img[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EmailID",
+					"value": "//input[@id='email']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Password",
+					"value": "//input[@id='pass']",
+					"type": "XPATH"
+				},
+				{
+					"key": "LoginButton",
+					"value": "//input[@name='login']",
+					"type": "XPATH"
+				},
+				{
+					"key": "UserName",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogOut",
+					"value": "//li[text()='Logout']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

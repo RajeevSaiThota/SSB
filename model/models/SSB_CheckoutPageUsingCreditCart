@@ -1,0 +1,62 @@
+{
+	"module": "CheckoutPageUsingCreditCard",
+	"models": [
+		{
+			"name": "CheckoutFlowCreditCard",
+			"elements": [
+				
+				{
+					"key": "CreditCardDebitCardClick",
+					"value": "//div[text()='Credit Card / Debit Card']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CardDetails",
+					"value": "//input[@id='input-with-icon-textfield']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "NameonCard",
+					"value": "(//input[@id='filled-hidden-label-normal'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ValidThru",
+					"value": "(//input[@id='filled-hidden-label-normal'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CVV",
+					"value": "(//input[@id='filled-hidden-label-normal'])[3]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "SaveCard",
+					"value": "//input[@aria-label='Checkbox demo']",
+					"type": "XPATH"
+				},	
+				
+				{
+					"key": "Paynow",
+					"value": "//div[@class='MuiBox-root css-6r0ez3']",
+					"type": "XPATH"
+				},	
+				{
+					"key": "CCCardOTP",
+					"value": "//input[@id='cardotp']",
+					"type": "XPATH"
+				},	
+				{
+					"key": "SubmitSuccess",
+					"value": "(//button[@type ='submit'])[2]",
+					"type": "XPATH"
+				},	
+			]
+		}
+	]
+}

@@ -1,0 +1,125 @@
+{
+	"module": "RegistrationFunctionalityCheck",
+	"models": [
+		{
+			"name": "HomePage",
+			"elements": [
+				{
+					"key": "SignIn",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "SignUp",
+					"value": "//p[text()='Sign Up']",
+					"type": "XPATH"
+				}
+				]
+				},
+				{
+			"name": "RegistrationFunctionality",
+			"elements": [
+				
+				{
+					"key": "UserName",
+					"value": "//input[@name='name']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Phone",
+					"value": "//input[@name='phone']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ProceedButton",
+					"value": "//button[text()='PROCEED']",
+					"type": "XPATH"
+				},
+				{
+					"key": "OTP",
+					"value": "//form[@class='MuiBox-root css-t6510n']",
+					"type": "XPATH"
+				},
+				{
+					"key": "VerifyOTP",
+					"value": "//button[text()='Verify OTP']",
+					"type": "XPATH"
+				},
+				{
+					"key": "EmailID",
+					"value": "//input[@id='emailId']",
+					"type": "XPATH"
+				},
+				{
+					"key": "DOBCalenderOpen",
+					"value": "(//img[@alt='Calendar'])[1]",
+					"type": "XPATH"
+				},
+				{
+					"key": "YearOpen",
+					"value": "//div[@class='MuiPickersCalendarHeader-label css-1v994a0']",
+					"type": "XPATH"
+				},
+				{
+					"key": "YearSelect",
+					"value": "//button[normalize-space()='1988']",
+					"type": "XPATH"
+				},
+				{
+					"key": "DateSelect",
+					"value": "//button[normalize-space()='13']",
+					"type": "XPATH"
+				},
+				{
+					"key": "AniversaryCalenderOpen",
+					"value": "(//img[@alt='Calendar'])[2]",
+					"type": "XPATH"
+				},
+				{
+					"key": "AYearOpen",
+					"value": "//div[@class='MuiPickersCalendarHeader-label css-1v994a0']",
+					"type": "XPATH"
+				},
+				{
+					"key": "AYearSelect",
+					"value": "//button[normalize-space()='2000']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ADateSelect",
+					"value": "//button[normalize-space()='10']",
+					"type": "XPATH"
+				},
+				{
+					"key": "Pincode",
+					"value": "//input[@id='pinCode']",
+					"type": "XPATH"
+				},
+				{
+					"key": "Address",
+					"value": "//textarea[@id='addressData']",
+					"type": "XPATH"
+				},
+				{
+					"key": "Save",
+					"value": "//button[normalize-space()='save']",
+					"type": "XPATH"
+				},
+				{
+					"key": "UserName1",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogOut",
+					"value": "//li[text()='Logout']",
+					"type": "XPATH"
+				},
+				
+				
+			]
+		}
+	]
+}

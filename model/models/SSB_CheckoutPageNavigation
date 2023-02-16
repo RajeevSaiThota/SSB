@@ -1,0 +1,117 @@
+{
+	"module": "CheckoutPageNavigationFlowGuestUser",
+	"models": [
+		{
+			"name": "NavigationFlowCheckoutGuest",
+			"elements": [
+				{
+					"key": "SearchBarPLP",
+					"value": "//input[@placeholder='Tell us what are you looking for']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddtoCart",
+					"value": "(//p[text()='ADD TO CART'])",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CartIcon",
+					"value": "//img[@alt='cartIcon']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PlaceOrder",
+					"value": "//button[text()='PLACE ORDER']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserNameTypeIn",
+					"value": "//input[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProceedButton",
+					"value": "//button[text()='PROCEED']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "OTP",
+					"value": "//form[@class='MuiBox-root css-t6510n']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "LogInButton",
+					"value": "//button[normalize-space()='Verify OTP']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddNewAddress",
+					"value": "(//button[@type='button'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Name",
+					"value": "(//input[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MobileNumber",
+					"value": "(//input[@id='outlined-basic'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Pincode",
+					"value": "(//input[@id='outlined-basic'])[3]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Address",
+					"value": "(//textarea[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CheckasDefaultAddress",
+					"value": "//input[@type='checkbox']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Home",
+					"value": "(//button[normalize-space()='Home'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddAddressSelect",
+					"value": "(//button[contains(@class,'MuiButtonBase')])[6]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddressSelectButton",
+					"value": "//input[@value='3638']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ContinuetoPaymentPage",
+					"value": "(//button[@type='button'])[2]",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

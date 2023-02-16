@@ -1,0 +1,77 @@
+{
+	"module": "CartPageVerifyApplyCouponSample",
+	"models": [
+		{
+			"name": "CartPageApplyCouponSampleFlow",
+			"elements": [
+				
+				{
+					"key": "CatogoryClick",
+					"value": "(//a[normalize-space()='Category'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MakeUpClick",
+					"value": "//p[text()='MakeUp']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductClick",
+					"value": "(//p[text()='Face Primers'])[12]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartProduct",
+					"value": "(//button[@type='button'])[8]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartClick",
+					"value": "(//img[@alt='cartIcon'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ApplyCouponIcon1",
+					"value": "//p[text()='Apply Coupon']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ApplyCouponClick1",
+					"value": "(//p[text()='Apply'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "RemoveCoupon1",
+					"value": "(//p[text()='Remove'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ApplyCouponIcon2",
+					"value": "//p[text()='Apply Coupon']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ApplyCouponClick2"
+					"value": "(//p[text()='Apply'])[5]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "RemoveCoupon2",
+					"value": "(//p[text()='Remove'])[2]",
+					"type": "XPATH"
+				},
+										
+			]
+		}
+	]
+}

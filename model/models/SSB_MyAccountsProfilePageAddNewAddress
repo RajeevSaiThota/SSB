@@ -1,0 +1,70 @@
+{
+	"module": "MyAccountProfilePageAddingAddress",
+	"models": [
+		{
+			"name": "ProfilePageAddingAddress",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MyProfileClick",
+					"value": "//li[text()='My Profile']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddingAddress",
+					"value": "//p[text()='Add Address']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Name",
+					"value": "(//input[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MobileNumber",
+					"value": "(//input[@id='outlined-basic'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Pincode",
+					"value": "(//input[@id='outlined-basic'])[3]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Address",
+					"value": "(//textarea[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CheckasDefaultAddress",
+					"value": "//input[@type='checkbox']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Home",
+					"value": "(//button[normalize-space()='Home'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddAddressSelect",
+					"value": "(//div[@class='MuiBox-root css-1wh8x1w'])[1]",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

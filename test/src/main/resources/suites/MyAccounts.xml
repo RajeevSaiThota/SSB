@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web My Accounts">
+<listeners>
+       <listener class-name="com.sslweb.automation.listeners.PDFReport" />
+       <listener class-name="com.sslweb.automation.test.ApplicationContextInitializer" />
+	</listeners>
+  <test name="SSB My Account Test Scripts" allow-return-values="true">
+    <classes>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountProfilePageAddAddressTest"/>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountProfilePageDeleteAddressTest"/>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountOrderPageTrackOrderTest"/>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountOrderPageFilterFunctionalityTest"/>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountProfilePageEditProfileTest"/>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountBeautyProfilePageFunctionalityTest"/>
+       <class name="com.techouts.sslweb.testscripts.MyAccount.SSBMyAccountMyWalletPageFunctionalityTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

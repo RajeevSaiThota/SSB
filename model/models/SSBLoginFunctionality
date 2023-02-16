@@ -1,0 +1,49 @@
+{
+	"module": "UserLoginFunctionalityCheck",
+	"models": [
+		{
+			"name": "SSBLoginFunctionality",
+			"elements": [
+				{
+					"key": "SignIn",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserNameTypeIn",
+					"value": "//input[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProceedButton",
+					"value": "//button[text()='PROCEED']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PasswordTypeIn",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-16ccorq'])[1]",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogInButton",
+					"value": "//button[normalize-space()='Verify OTP']",
+					"type": "XPATH"
+				},
+				{
+					"key": "UserName",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogOut",
+					"value": "//li[text()='Logout']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

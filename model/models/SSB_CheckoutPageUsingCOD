@@ -1,0 +1,93 @@
+{
+	"module": "CheckoutPageUsingCOD",
+	"models": [
+		{
+			"name": "CheckoutFlowCOD",
+			"elements": [
+							
+				{
+					"key": "SignIn",
+					"value": "//p[text()='Sign In']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserNameTypeIn",
+					"value": "//input[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProceedButton",
+					"value": "//button[text()='PROCEED']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PasswordTypeIn",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-16ccorq'])[1]",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogInButton",
+					"value": "//button[normalize-space()='Verify OTP']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartProduct",
+					"value": "//p[text()='ADD TO CART']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartClick",
+					"value": "(//img[@alt='cartIcon'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PlaceOrderClick",
+					"value": "(//button[normalize-space()='place order'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ContinueClick",
+					"value": "(//button[normalize-space()='continue'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CODClick",
+					"value": "//*[text()='Cash On Delivery']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CODPlaceOrderClick",
+					"value": "(//button[normalize-space()='Place Order'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ContinueShoppingClick",
+					"value": "//p[text()='CONTINUE SHOPPING']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserName",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogOut",
+					"value": "//li[text()='Logout']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

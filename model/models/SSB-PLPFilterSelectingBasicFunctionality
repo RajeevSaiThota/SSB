@@ -1,0 +1,40 @@
+{
+	"module": "PLPBasicFilterFunctionality",
+	"models": [
+		{
+			"name": "BasicFilterFunctionality",
+			"elements": [
+				{
+					"key": "ViewMore",
+					"value": "//p[text()='VIEW MORE']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "BestSeller",
+					"value": "//p[text()='Best Seller']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Featured",
+					"value": "//p[text()='Featured']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ExpressDelivery",
+					"value": "//p[text()='Express Delivery']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClearAllClick",
+					"value": "//p[text()='CLEAR ALL']",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

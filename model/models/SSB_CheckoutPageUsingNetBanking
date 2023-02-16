@@ -1,0 +1,35 @@
+{
+	"module": "CheckoutPageUsingNetBanking",
+	"models": [
+		{
+			"name": "CheckoutFlowNetBanking",
+			"elements": [
+							
+				{
+					"key": "NetBankingClick",
+					"value": "//div[text()='Net Banking']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "BankIconClick",
+					"value": "(//img[@alt='bank logo'])[3]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PayNow",
+					"value": "//button[text()='Pay Now']",
+					"type": "XPATH"
+				},
+				{
+					"key": "BankPage",
+					"value": "//button[normalize-space()='Simulate success']",
+					"type": "XPATH"
+				},
+				
+				
+			]
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"module": "MyAccountOrderPageHistoryFilter",
+	"models": [
+		{
+			"name": "OrderPageFilter",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MyOrdersClick",
+					"value": "//li[text()='My Orders']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "FilterBarClick",
+					"value": "//div[@aria-label='Without label']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "FilterSelection",
+					"value": "//li[normalize-space()='Past Year']",
+					"type": "XPATH"
+				},
+											
+			]
+		}
+	]
+}

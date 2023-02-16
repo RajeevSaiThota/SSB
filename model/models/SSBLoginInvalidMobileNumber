@@ -1,0 +1,27 @@
+{
+	"module": "LoginusingInvalidMobileNumber",
+	"models": [
+		{
+			"name": "LoginInvalidMobileNumber",
+			"elements": [
+				{
+					"key": "SignIn",
+					"value": "//p[text()='Sign In']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserNameTypeIn",
+					"value": "//input[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "InvalidNumPopup",
+					"value": "//p[@id='outlined-basic-helper-text']",
+					"type": "XPATH"
+				},
+			]
+		}
+	]
+}	

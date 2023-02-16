@@ -1,0 +1,64 @@
+{
+	"module": "CartPageDefaultFunctionality",
+	"models": [
+		{
+			"name": "CartPageFlow",
+			"elements": [
+				{
+					"key": "CatogoryClick",
+					"value": "(//a[normalize-space()='Category'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MakeUpClick",
+					"value": "//p[text()='MakeUp']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductClick",
+					"value": "(//p[text()='Kajals'])[12]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartProduct",
+					"value": "(//button[@type='button'])[8]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartClick",
+					"value": "(//img[@alt='cartIcon'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ApplyCouponIcon",
+					"value": "//p[text()='Apply Coupon']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ApplyCouponClick",
+					"value": "(//p[text()='Apply'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "RemoveCoupon",
+					"value": "(//p[text()='Remove'])[2]",
+					"type": "XPATH"
+				},	
+				
+				{
+					"key": "ChangeClick",
+					"value": "(//button[normalize-space()='CHANGE'])[1]",
+					"type": "XPATH"
+				},	
+								
+			]
+		}
+	]
+}

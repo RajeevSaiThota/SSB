@@ -1,0 +1,33 @@
+{
+	"module": "MyAccountProfilePageDeletingAddress",
+	"models": [
+		{
+			"name": "ProfilePageDeletingAddress",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MyProfileClick",
+					"value": "//li[text()='My Profile']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "DeleteAddress",
+					"value": "(//img[@alt='delete_logo'])[1]",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickingYes",
+					"value": "//p[text()='YES']",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

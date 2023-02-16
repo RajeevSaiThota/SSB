@@ -1,0 +1,39 @@
+{
+	"module": "MyAccountOrderPageHistoryTrackOrder",
+	"models": [
+		{
+			"name": "OrderPageTrackOrder",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MyOrdersClick",
+					"value": "//li[text()='My Orders']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductCardClick",
+					"value": "(//*[name()='svg'][@class='MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-frziqf'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "TrackOrderClick",
+					"value": "//button[text()='Track Order']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CloseIcon",
+					"value": "//img[@alt='close_icon']",
+					"type": "XPATH"
+				},								
+			]
+		}
+	]
+}

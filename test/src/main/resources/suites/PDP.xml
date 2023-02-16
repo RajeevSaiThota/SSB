@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web PDP Suite">
+	<listeners>
+       <listener class-name="com.sslweb.automation.listeners.PDFReport" />
+       <listener class-name="com.sslweb.automation.test.ApplicationContextInitializer" />
+	</listeners>
+	<test name="SSB PDP Test Scripts" allow-return-values="true">
+    <classes>
+      <class name="com.techouts.ssbweb.testscripts.PDP.SSBPDPVErifyDetailsTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

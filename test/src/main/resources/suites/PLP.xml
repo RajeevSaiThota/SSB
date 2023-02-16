@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web PLP Suite ">
+	<listeners>
+       <listener class-name="com.sslweb.automation.listeners.PDFReport" />
+       <listener class-name="com.sslweb.automation.test.ApplicationContextInitializer" />
+	</listeners>
+	<test name="SSB PLP TestScripts" allow-return-values="true">
+
+    <classes>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPClearAllFunctionalityTest"/>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPCategoryFilterTest"/>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPBrandFilterTest"/>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPSortByDropDownTest"/>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPPriceFilterTest"/>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPVerifyDetailsFunctionalityTest"/>
+      <class name="com.techouts.ssbweb.testscripts.PLP.SSBPLPBasicFilterTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

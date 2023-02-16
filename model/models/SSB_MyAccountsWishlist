@@ -1,0 +1,33 @@
+{
+	"module": "MyAccountWishlistPage",
+	"models": [
+		{
+			"name": "MyAccountWishlist",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "WishlistClick",
+					"value": "//li[text()='Wishlist']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UncheckWishlistClick",
+					"value": "(//img[@alt='heart-filled'])[1]",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickonYES",
+					"value": "(//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1spl1x'])[1]",
+					"type": "XPATH"
+				},
+											
+			]
+		}
+	]
+}

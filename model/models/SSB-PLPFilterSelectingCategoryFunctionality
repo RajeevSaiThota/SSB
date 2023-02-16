@@ -1,0 +1,22 @@
+{
+	"module": "PLPCategoryFilterFunctionality",
+	"models": [
+		{
+			"name": "categoryFilterFunctionality",
+			"elements": [
+				{
+					"key": "CategorySelection",
+					"value": "//p[text()='Category']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CategorySelection1",
+					"value": "(//input[@type='checkbox'])[48]",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}

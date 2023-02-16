@@ -1,0 +1,29 @@
+{
+	"module": "CheckoutPageUsingWallet",
+	"models": [
+		{
+			"name": "CheckoutFlowWallet",
+			"elements": [
+							
+				{
+					"key": "WalletClick",
+					"value": "//input[@type='checkbox']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EnterWalletOTP",
+					"value": "//form[@class='MuiBox-root css-t6510n']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "VerifyAndProceedButton",
+					"value": "//button[normalize-space()='Verify and Procced']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

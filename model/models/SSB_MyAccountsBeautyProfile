@@ -1,0 +1,99 @@
+{
+	"module": "MyAccountBeautyProfilePage",
+	"models": [
+		{
+			"name": "MyAccountBeautyProfile",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "BeautyProfileClick",
+					"value": "//li[text()='Beauty Profile']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ReDoProfileClick",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-qfdc1z'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickOnGetStarted",
+					"value": "//p[text()='GET STARTED']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonDRYCatogery",
+					"value": "(//p[normalize-space()='Dry'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonMYSKINTONE",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-1fyqby1'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonFAIRCatogery",
+					"value": "(//p[normalize-space()='Fair'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonMAKEUPPERSONALITY",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-1fyqby1'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonPOPPRINCESCatogery",
+					"value": "(//p[normalize-space()='Pop Princess'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonHAIRTYPE",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-1fyqby1'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonSTRAIGHTCatogery",
+					"value": "(//p[normalize-space()='Straight'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonFRAGRANCES",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-1fyqby1'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickonFLORALCatogery",
+					"value": "(//p[normalize-space()='Floral'])[1]",
+					"type": "XPATH"
+				},	
+				
+				{
+					"key": "ClickonDONE",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-1fyqby1'])[1]",
+					"type": "XPATH"
+				},	
+				
+				{
+					"key": "ClickonCHECKTHEMOUT",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-1fyqby1'])[1]",
+					"type": "XPATH"
+				},						
+			]
+		}
+	]
+}

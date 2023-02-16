@@ -1,0 +1,39 @@
+{
+	"module": "UserLoginFunctionalityGmail",
+	"models": [
+		{
+			"name": "GmailLoginFunctionality",
+			"elements": [
+				{
+					"key": "SignIn",
+					"value": "//p[text()='Sign In']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "GmailIconClick",
+					"value": "//div[@role='presentation']//img[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EmailID",
+					"value": "//input[@id='identifierId']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Next",
+					"value": "//span[normalize-space()='Next']",
+					"type": "XPATH"
+				},
+				{
+					"key": "Password",
+					"value": "//input[@name='password']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

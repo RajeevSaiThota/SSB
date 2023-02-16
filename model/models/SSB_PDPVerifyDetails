@@ -1,0 +1,74 @@
+{
+	"module": "SSBPDPVerifyDetails",
+	"models": [
+		{
+			"name": "VerifyDetailsPDP",
+			"elements": [
+				{
+					"key": "SearchBarPLP",
+					"value": "//input[@placeholder='Tell us what are you looking for']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductCardClick",
+					"value": "(//a[@class='MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1me2eo7'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductImageClick",
+					"value": "//img[@alt='main-prod-image']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CloseButton",
+					"value": "//img[@alt='close_icon']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProductDetailsCheck",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1itjhtr']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ProductPriceCheck",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1k3desx']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EasyReturnsClick",
+					"value": "//div[contains(text(),'Easy Exchange & Return')]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClickingButtonEasyR",
+					"value": "//button[normalize-space()='OKAY, GOT IT']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AuthenticProductClick",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-16hymqi']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "HowtoUseClick",
+					"value": "//button[@id='mui-p-88100-T-how_to_use']",
+					"type": "XPATH"
+				},
+				{
+					"key": "WishListIcon",
+					"value": "//img[@alt='heart-empty']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}

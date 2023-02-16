@@ -1,0 +1,127 @@
+{
+	"module": "CheckoutPageUsingDebitCard",
+	"models": [
+		{
+			"name": "CheckoutFlowDebitCard",
+			"elements": [
+				
+				{
+					"key": "SignIn",
+					"value": "//p[text()='Sign In']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "UserNameTypeIn",
+					"value": "//input[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ProceedButton",
+					"value": "//button[text()='PROCEED']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PasswordTypeIn",
+					"value": "(//p[@class='MuiTypography-root MuiTypography-body1 css-16ccorq'])[1]",
+					"type": "XPATH"
+				},
+				{
+					"key": "LogInButton",
+					"value": "//button[normalize-space()='Verify OTP']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartProduct",
+					"value": "(//p[text()='ADD TO CART'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddToCartClick",
+					"value": "(//img[@alt='cartIcon'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PlaceOrderClick",
+					"value": "(//button[normalize-space()='place order'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ContinueClick",
+					"value": "(//button[normalize-space()='continue'])[1]",
+					"type": "XPATH"
+				},
+						
+				{
+					"key": "CreditCardDebitCardClick",
+					"value": "(//div[@class='MuiBox-root css-1ssvpys'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CardDetails",
+					"value": "//input[@id='card_number']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "NameonCard",
+					"value": "//*[@class='name_on_card']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ValidMonth",
+					"value": "//*[@class='card_exp_month']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ValidYear",
+					"value": "//*[@class='card_exp_year']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CVV",
+					"value": "//*[@class='security_code']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Paynow",
+					"value": "//*[@id='common_pay_btn']",
+					"type": "XPATH"
+				},	
+				{
+					"key": "DBCardOTP",
+					"value": "//*[@id='cardotp']",
+					"type": "XPATH"
+				},	
+				{
+					"key": "SubmitSuccess",
+					"value": "//*[@class='mb-2 mb-md-0 button-29 mr-1']",
+					"type": "XPATH"
+				},	
+				
+				{
+					"key": "UserName",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "LogOut",
+					"value": "//li[text()='Logout']",
+					"type": "XPATH"
+				},
+			]
+		}
+	]
+}

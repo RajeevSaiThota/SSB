@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Web CartPage Suite">
+	<listeners>
+       <listener class-name="com.sslweb.automation.listeners.PDFReport" />
+       <listener class-name="com.sslweb.automation.test.ApplicationContextInitializer" />
+	</listeners>
+	<test name="SSB CartPage Test Scripts" allow-return-values="true">
+    <classes>
+      <class name="com.techouts.ssbweb.testscripts.CartPage.SSBCartPageApplyCouponTest"/>
+      <class name="com.techouts.ssbweb.testscripts.CartPage.SSBCartPageDefaultFunctionalitiesTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

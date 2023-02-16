@@ -1,0 +1,40 @@
+{
+	"module": "MyAccountMyWalletPage",
+	"models": [
+		{
+			"name": "MyWalletPage",
+			"elements": [
+				{
+					"key": "UserProfile",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1vpq9un']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MyWalletClick",
+					"value": "//li[text()='My Wallet']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EnterCardNumberClick",
+					"value": "(//input[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "EnterPinClick",
+					"value": "(//input[@id='outlined-basic'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CheckBalenceClick",
+					"value": "(//div[@class='MuiBox-root css-1oovyp6'])[1]",
+					"type": "XPATH"
+				},
+											
+			]
+		}
+	]
+}

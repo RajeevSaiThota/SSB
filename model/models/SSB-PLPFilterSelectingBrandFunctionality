@@ -1,0 +1,34 @@
+{
+	"module": "PLPBrandFilterFunctionality",
+	"models": [
+		{
+			"name": "BrandFilterFunctionality",
+			"elements": [
+				{
+					"key": "BrandCategorySelection",
+					"value": "(//p[normalize-space()='Brand'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "BrandSelection1",
+					"value": "(//input[@type='checkbox'])[8]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "BrandSelection2",
+					"value": "(//input[@type='checkbox'])[9]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "BrandSelection3",
+					"value": "(//input[@type='checkbox'])[10]",
+					"type": "XPATH"
+				},
+												
+			]
+		}
+	]
+}

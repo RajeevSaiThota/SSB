@@ -1,0 +1,143 @@
+{
+	"module": "CheckoutPageUsingGiftCard",
+	"models": [
+		{
+			"name": "CheckoutFlowGiftCard",
+			"elements": [
+				{
+					"key": "AddtoCart",
+					"value": "(//p[text()='ADD TO CART'])[6]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CartIcon",
+					"value": "//img[@alt='cartIcon']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PlaceOrder",
+					"value": "//button[text()='PLACE ORDER']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddNewAddress",
+					"value": "//p[contains(@class,'css-v4rrs1')]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Name",
+					"value": "(//input[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "MobileNumber",
+					"value": "(//input[@id='outlined-basic'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Pincode",
+					"value": "(//input[@id='outlined-basic'])[3]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "City",
+					"value": "(//input[@id='outlined-basic'])[4]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "State",
+					"value": "//div[@id='mui-component-select-state']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "SelectingState",
+					"value": "//li[normalize-space()='Telangana']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Address",
+					"value": "//textarea[@id='outlined-basic']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CheckasDefaultAddress",
+					"value": "//input[@type='checkbox']",
+					"type": "XPATH"
+				},
+				
+				
+				{
+					"key": "Home",
+					"value": "(//button[normalize-space()='Home'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "AddAddressSelect",
+					"value": "(//button[contains(@class,'MuiButtonBase')])[6]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ContinuetoPaymentPage",
+					"value": "//button[text()='CONTINUE']",
+					"type": "XPATH"
+				},
+				
+				
+				{
+					"key": "GiftCardClick",
+					"value": "(//div[@class='MuiBox-root css-1p1lesn'])[7]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "GiftCardButtonClick",
+					"value": "(//input[@class='PrivateSwitchBase-input css-1m9pwf3'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "GiftCardNumber",
+					"value": "(//input[@id='outlined-basic'])[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "CheckBalance",
+					"value": "//p[text()='check Balance']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "PinNumber",
+					"value": "(//input[@id='outlined-basic'])[2]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "RedeemAmount",
+					"value": "(//input[@id='outlined-basic'])[3]",
+					"type": "XPATH"
+				},	
+				
+				{
+					"key": "RedeemAmountClick",
+					"value": "//button[text()='REDEEM AMOUNT']",
+					"type": "XPATH"
+				},	
+			]
+		}
+	]
+}

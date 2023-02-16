@@ -1,0 +1,28 @@
+{
+	"module": "PLPClearAllFunctionality",
+	"models": [
+		{
+			"name": "FilterCLearAllFunctionality",
+			"elements": [
+				{
+					"key": "GenderFilter",
+					"value": "//p[text()='Gender']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "GenderWomanClick",
+					"value": "(//input[@type='checkbox'])[176]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "ClearAll",
+					"value": "//p[text()='CLEAR ALL']",
+					"type": "XPATH"
+				},
+								
+			]
+		}
+	]
+}
