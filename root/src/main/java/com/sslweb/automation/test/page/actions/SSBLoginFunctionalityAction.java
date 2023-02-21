@@ -31,18 +31,24 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(5);
 			ssbLoginFunctionalityHelper.clickOnAccount();
 			WebElementOperationsWeb.park(5);
-			
-			JavascriptExecutor executor = (JavascriptExecutor) driver;
-			executor.executeScript("window.open()");
+		} catch (Exception e) {
+			handleOnException("All Fields Displayed not able found", e);
+		}
+	}
+	public void openNewTab(String testCaseName, String mobileNumber) {
+		try {
+			WebElementOperationsWeb.openingNewTab(driver);
 			
 			WebElementOperationsWeb.windowHandle(driver);
 			
-			driver.get("https://test4.shopper-stop.in/backoffice/login.zul");
+		} catch (Exception e) {
+			handleOnException("All Fields Displayed not able found", e);
+		}
+	}
+	public void verifyingMobileNumberAvailability(String testCaseName, String mobileNumber) {
+		try {
 			
-			//WebElementOperationsWeb.newWindowActionURLValidateWithURL(driver, "https://test4.shopper-stop.in/backoffice/login.zul");
-			
-			//WebElementOperationsWeb.openWebPage(driver, "https://test4.shopper-stop.in/backoffice/login.zul");
-			
+	
 			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_username']")), "saibhavani.p@techouts.com");
 			
 			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_password']")), "sai@123");
@@ -50,17 +56,21 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 			Thread.sleep(2000);
 			
 			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Login']")));		
-			
+			Thread.sleep(2000);
+
 			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Filter Tree entries']")), "User OTP Model");
-			
+			Thread.sleep(2000);
+
 			WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='User OTP Model']")));
-			
+			Thread.sleep(2000);
+
 			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[@title='Switch search mode']")));
 			
 			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//span[text()='Mobile']/following::td[2]/div/input")), mobileNumber);
 			
 			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Search']")));
-			
+			Thread.sleep(2000);
+
 			try {
 			
 			if(driver.findElement(By.xpath("//span[text()='MOBILE']")).isDisplayed()) {
@@ -68,7 +78,8 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 				WebElementOperationsWeb.click(driver.findElement(By.xpath("//img[@title='Delete']")));
 				
 				WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Yes']")));
-				
+				Thread.sleep(2000);
+
 				WebElementOperationsWeb.handleParentTab(driver);
 			} }
 			
@@ -84,6 +95,17 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 		}
 	}
 
+	public void backofficeLoginFunctionality(String testCaseName,String username, String password) {
+		try {
+
+			WebElementOperationsWeb.park(5);
+			ssbLoginFunctionalityHelper.LoginEnterUsername(username);
+			WebElementOperationsWeb.park(3);
+			ssbLoginFunctionalityHelper.LoginProceed();
+		} catch (Exception e) {
+			handleOnException("All Fields Displayed not able found", e);
+		}
+	}
 	public void LoginFunctionalityusingMobileNumber(String username, String testCaseName) {
 		try {
 

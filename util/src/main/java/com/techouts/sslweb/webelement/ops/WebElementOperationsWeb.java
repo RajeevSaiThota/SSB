@@ -744,6 +744,11 @@ public class WebElementOperationsWeb {
 		}
 	}
 	
+	public static void openingNewTab(WebDriver driver) {
+	JavascriptExecutor executor = (JavascriptExecutor) driver;
+	executor.executeScript("window.open()");
+	}
+	
 	/**
 	 *This method switches to the child to parent window
 	 */

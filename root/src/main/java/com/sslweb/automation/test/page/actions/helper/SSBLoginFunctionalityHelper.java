@@ -91,6 +91,57 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 		}
 	}
 
+	public void verifyingMobileNumberAvailability(String testCaseName, String mobileNumber) {
+		try {
+			
+	
+			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_username']")), "saibhavani.p@techouts.com");
+			
+			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_password']")), "sai@123");
+			
+			Thread.sleep(2000);
+			
+			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Login']")));		
+			Thread.sleep(2000);
+
+			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Filter Tree entries']")), "User OTP Model");
+			Thread.sleep(2000);
+
+			WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='User OTP Model']")));
+			Thread.sleep(2000);
+
+			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[@title='Switch search mode']")));
+			
+			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//span[text()='Mobile']/following::td[2]/div/input")), mobileNumber);
+			
+			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Search']")));
+			Thread.sleep(2000);
+
+			try {
+			
+			if(driver.findElement(By.xpath("//span[text()='MOBILE']")).isDisplayed()) {
+				
+				WebElementOperationsWeb.click(driver.findElement(By.xpath("//img[@title='Delete']")));
+				
+				WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Yes']")));
+				Thread.sleep(2000);
+
+				WebElementOperationsWeb.handleParentTab(driver);
+			} }
+			
+			catch(Exception e){
+				
+				WebElementOperationsWeb.handleParentTab(driver);
+			}
+			
+			
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+		} catch (Exception e) {
+			handleOnException("All Fields Displayed not able found", e);
+		}
+	}
+	
+	
 	// Enter OTP
 	public void LoginOTP(String testCaseName, String mobileNumber) {
 		try {
@@ -122,9 +173,11 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//span[text()='Mobile']/following::td[2]/div/input")), mobileNumber);
 			
 			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Search']")));
-			
+			Thread.sleep(2000);
+
 			WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='MOBILE']")));
-			
+			Thread.sleep(2000);
+
 			String otpNum = WebElementOperationsWeb.getAttributeValue(driver.findElement(By.xpath("//span[text()='OTP']/following::div[3]/input")));
 						
 			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//img[@title='Delete']")));
@@ -141,7 +194,8 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 			Thread.sleep(2000);
 			
 			WebElementOperationsWeb.handleParentTab(driver);
-			
+			Thread.sleep(2000);
+
 			List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));
 			
 			for(int i=0; i<otp.size(); i++) {

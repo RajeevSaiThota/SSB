@@ -21,6 +21,7 @@ public final class ShoppersStopConstantsWeb {
 	public static final String SSL_DB_DRIVER = "ssl.db-driver";
 	public static final String SSL_DB_USERNAME = "ssl.db-username";
 	public static final String SSL_DB_PASSWORD = "ssl.db-password";
+	public static final String SSL_BACKOFFICE_url = "ssl.backoffice-url";
 
 	public static final int TEST_CASE_ID = 0;
 	public static final int UPDATE_RESULT = 2;

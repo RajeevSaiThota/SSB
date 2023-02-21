@@ -145,6 +145,13 @@ public class ApplicationContextInitializer extends GlobalExceptionHandler implem
 			throw new ShoppersStopBusinessException("Unable To Open Application Page", e);
 		}
 	}
+	protected void getSslBackofficeUrl() {
+		try {
+			DRIVER.get(PathProvider.getSslBackofficeUrl());
+		} catch (Exception e) {
+			throw new ShoppersStopBusinessException("Unable To Open Application Page", e);
+		}
+	}
 	public void destroy(){
 		LOG.debug("Performing post execution operation and Destroying all the initialized content.");
 		Registry.setAttribute(RegistryKey.SUITE_END_TIME, new Date());
