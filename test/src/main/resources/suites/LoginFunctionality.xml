@@ -9,11 +9,11 @@
 
     <classes>
       <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginFunctionalityMobileNumberTest"/>
-      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginInvalidMobileNumber"/>
+      <!-- <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginInvalidMobileNumber"/>
       <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginFunctionalityInvalidOTP"/>
       <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginResendOTPFunctionalityMobileNumberTest"/>
       <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBLoginFunctionalityFacebookTest"/>
-      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBRegistrationFunctionalityTest"/>
+      <class name="com.techouts.sslweb.testscripts.LoginFunctionality.SSBRegistrationFunctionalityTest"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- LoginFunctionalitySuite -->

@@ -1,17 +1,17 @@
 package com.sslweb.automation.test.page.actions.helper;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import com.sslweb.automation.test.handler.GlobalExceptionHandler;
 import com.sslweb.automation.userloginfunctionalitycheck.model.SSBLoginFunctionality;
-import com.sslweb.automation.util.encryption.DecryptionWeb;
-import com.sslweb.automation.util.encryption.EncryptDecryptPassword;
 import com.sslweb.automation.util.exceptions.ShoppersStopBusinessException;
 import com.techouts.sslweb.testscripts.db.DataBaseConnect;
 import com.techouts.sslweb.webelement.ops.WebElementOperationsWeb;
@@ -94,11 +94,63 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	// Enter OTP
 	public void LoginOTP(String testCaseName, String mobileNumber) {
 		try {
-			String otpNum=dataBaseConnect.getOTP(mobileNumber);
+			//String otpNum=dataBaseConnect.getOTP(mobileNumber);
+			
+			System.out.println("------>>>>LoginOTP method Execution Started<<<<----");
+			
+			//JavascriptExecutor executor = (JavascriptExecutor) driver;
+			//executor.executeScript("window.open()");
+			
+			WebElementOperationsWeb.windowHandle(driver);
+			
+			//driver.get("https://test4.shopper-stop.in/backoffice/login.zul");
+			
+			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_username']")), "saibhavani.p@techouts.com");
+			
+			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_password']")), "sai@123");
+			
+			Thread.sleep(2000);
+			
+			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Login']")));		
+			
+			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Filter Tree entries']")), "User OTP Model");
+			
+			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='User OTP Model']")));
+			
+			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[@title='Switch search mode']")));
+			
+			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//span[text()='Mobile']/following::td[2]/div/input")), mobileNumber);
+			
+			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Search']")));
+			
+			WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='MOBILE']")));
+			
+			String otpNum = WebElementOperationsWeb.getAttributeValue(driver.findElement(By.xpath("//span[text()='OTP']/following::div[3]/input")));
+						
+			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//img[@title='Delete']")));
+			
+			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Yes']")));
+			
+			System.out.println("---->>OTP from BO is<<----- " +otpNum);
+			
 			String Decryptotp = decryptusingweb(otpNum);
 			//String Decryptotp = EncryptDecryptPassword.decrypt(otpNum);
-			System.out.println(Decryptotp);
+			//System.out.println(Decryptotp);
 			//sendOtpDB(testCaseName, Decryptotp);
+			
+			Thread.sleep(2000);
+			
+			WebElementOperationsWeb.handleParentTab(driver);
+			
+			List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));
+			
+			for(int i=0; i<otp.size(); i++) {
+				
+				otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
+				//WebElementOperationsWeb.sendKeys(otp, Decryptotp.charAt(i));
+			}
+			
+						
 		} catch (Exception e) {
 			handleOnException("Unknown error occured while clicking Username/Phonenumber Block: "
 					+ SSBLoginFunctionality.getPasswordTypeIn(), e);
@@ -134,16 +186,25 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 		}
 	}
 	
-	public static String decryptusingweb(String strToDecrypt) {
+	public String decryptusingweb(String strToDecrypt) {
 		try {
-			driver1 = new HtmlUnitDriver();
-			driver1.get("https://md5decrypt.net/en/Sha256/#answer");
-			WebElementOperationsWeb.park(5);
-			WebElement element = driver1.findElement(By.xpath("//textarea[@id='hash_input']"));
+			
+			//JavascriptExecutor executor = (JavascriptExecutor) driver;
+			//executor.executeScript("window.open()");
+						
+			//driver1 = new HtmlUnitDriver();
+			//driver1.get("https://md5decrypt.net/en/Sha256/#answer");
+			//WebElementOperationsWeb.park(5);
+			
+			driver.get("https://md5decrypt.net/en/Sha256/#answer");
+			
+			Thread.sleep(2000);
+			
+			WebElement element = driver.findElement(By.xpath("//textarea[@id='hash_input']"));
 			element.sendKeys(strToDecrypt);
-			driver1.findElement(By.xpath("//input[@name='decrypt']")).click();
+			driver.findElement(By.xpath("//input[@name='decrypt']")).click();
 			WebElementOperationsWeb.park(3);
-			String decryptedOTP = driver1.findElement(By.cssSelector("fieldset[id='answer'] b")).getText();
+			String decryptedOTP = driver.findElement(By.cssSelector("fieldset[id='answer'] b")).getText();
 			System.out.println(decryptedOTP);
 			return decryptedOTP;
 		} catch (Exception e) {

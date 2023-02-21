@@ -36,7 +36,7 @@ public class SSBLoginFunctionalityMobileNumberTest extends AbstractTest {
 			User mobilelogin = Objects.requireNonNull(CredentialProvider.getUser("E002"),
 					"Mobile Login credential should not be null");
 
-			ssbLoginActions.LoginFunctionalityClick(TEST_CASE_NAME);
+			ssbLoginActions.LoginFunctionalityClick(TEST_CASE_NAME, mobilelogin.getMobileno());
 			ssbLoginActions.LoginFunctionalityusingMobileNumber(mobilelogin.getMobileno(), TEST_CASE_NAME);
 			ssbLoginActions.LoginFunctionalityEnterOTP(TEST_CASE_NAME, mobilelogin.getMobileno());
 			ssbLoginActions.LoginFunctionalityClickonLogInButton(TEST_CASE_NAME);

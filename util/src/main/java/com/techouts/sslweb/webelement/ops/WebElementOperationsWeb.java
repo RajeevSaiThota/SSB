@@ -805,6 +805,11 @@ public class WebElementOperationsWeb {
 		}
 
 	}
+	
+	public static void openWebPage(WebDriver driver, String url) {
+		
+		driver.get(url);
+	}
 
 	
 }
