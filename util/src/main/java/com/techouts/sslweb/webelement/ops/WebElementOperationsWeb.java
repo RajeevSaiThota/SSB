@@ -197,7 +197,7 @@ public class WebElementOperationsWeb {
 	 */
 	public static void waitForPageLoad(WebDriver driver, int seconds) {
 		try{
-			new WebDriverWait(driver, seconds).until(a -> executeJS(driver, ShoppersStopConstantsWeb.JS_EXPECTED_CONDITION_RESULT_SCRIPT).equals(ShoppersStopConstantsWeb.COMPLETE));
+			//new WebDriverWait(driver, seconds).until(a -> executeJS(driver, ShoppersStopConstantsWeb.JS_EXPECTED_CONDITION_RESULT_SCRIPT).equals(ShoppersStopConstantsWeb.COMPLETE));
 		}catch(Exception e){
 			throwWebElementOperationException("Error occurred while waiting for the page to load with "+seconds+" second(s) wait.", e);
 		}

@@ -5,12 +5,11 @@ import java.util.Objects;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.sslweb.automation.test.handler.GlobalExceptionHandler;
+import com.sslweb.automation.userbackofficeloginfunctionalitycheck.model.SSBBackofficeLoginFunctionality;
 import com.sslweb.automation.userloginfunctionalitycheck.model.SSBLoginFunctionality;
 import com.sslweb.automation.util.exceptions.ShoppersStopBusinessException;
 import com.techouts.sslweb.testscripts.db.DataBaseConnect;
@@ -21,7 +20,6 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	// In this class we are performing operations on the web element
 
 	private WebDriver driver = null;
-	private static WebDriver driver1;
 	private static final Logger LOG = Logger.getLogger(SSBLoginFunctionalityHelper.class);
 	private DataBaseConnect dataBaseConnect;
 
@@ -76,140 +74,87 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 		}
 	}
 
-	private void sendOtpDB(String testCaseName, String otp) {
+
+	String otpNum = null;
+
+	public String getOTP(String testCaseName) {
 		try {
-			if (WebElementOperationsWeb.isDisplayed(driver, SSBLoginFunctionality.getPasswordTypeIn())) {
-				WebElementOperationsWeb.sendKeys(driver, SSBLoginFunctionality.getPasswordTypeIn(), otp);
-				WebElementOperationsWeb.park(3);
-			} else {
-				throw new ShoppersStopBusinessException(
-						"Error occured while sending OTP [" + SSBLoginFunctionality.getPasswordTypeIn() + "]");
-			}
+			otpNum = WebElementOperationsWeb.getAttributeValue(SSBBackofficeLoginFunctionality.getGetOtpNumber());
+		
 		} catch (Exception e) {
-			WebElementOperationsWeb.captureScreenShotOnFail(driver, testCaseName, "OTP");
-			handleOnException("Error occured while sending OTP [" + SSBLoginFunctionality.getPasswordTypeIn() + "]", e);
+			handleOnException("Error occured while geting otp", e);
 		}
-	}
-
-	public void verifyingMobileNumberAvailability(String testCaseName, String mobileNumber) {
-		try {
-			
-	
-			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_username']")), "saibhavani.p@techouts.com");
-			
-			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_password']")), "sai@123");
-			
-			Thread.sleep(2000);
-			
-			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Login']")));		
-			Thread.sleep(2000);
-
-			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Filter Tree entries']")), "User OTP Model");
-			Thread.sleep(2000);
-
-			WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='User OTP Model']")));
-			Thread.sleep(2000);
-
-			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[@title='Switch search mode']")));
-			
-			WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//span[text()='Mobile']/following::td[2]/div/input")), mobileNumber);
-			
-			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Search']")));
-			Thread.sleep(2000);
-
-			try {
-			
-			if(driver.findElement(By.xpath("//span[text()='MOBILE']")).isDisplayed()) {
-				
-				WebElementOperationsWeb.click(driver.findElement(By.xpath("//img[@title='Delete']")));
-				
-				WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Yes']")));
-				Thread.sleep(2000);
-
-				WebElementOperationsWeb.handleParentTab(driver);
-			} }
-			
-			catch(Exception e){
-				
-				WebElementOperationsWeb.handleParentTab(driver);
-			}
-			
-			
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
-		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
-		}
+		return otpNum;
 	}
 	
+	public void enterOtpByDecrypting(String testCaseName) {
+		try {
+		String Decryptotp = decryptusingweb(otpNum);
+		WebElementOperationsWeb.handleParentTab(driver);
+		List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));		
+		for(int i=0; i<otp.size(); i++) {			
+			otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
+		}
+	} catch (Exception e) {
+		handleOnException("Error occured while decrypting and entering otp", e);
+	}
+}
+/*
+ * public void enterOtp(String testCaseName) { try { String Decryptotp =
+ * decryptusingweb(getOTP(testCaseName));
+ * WebElementOperationsWeb.handleParentTab(driver); List<WebElement> otp =
+ * driver.findElements(By.xpath("//input[@type='tel']"));
+ * 
+ * for(int i=0; i<otp.size(); i++) {
+ * 
+ * otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i))); } } catch
+ * (Exception e) { handleOnException("All Fields Displayed not able found", e);
+ * } }
+ */
 	
 	// Enter OTP
-	public void LoginOTP(String testCaseName, String mobileNumber) {
-		try {
-			//String otpNum=dataBaseConnect.getOTP(mobileNumber);
-			
-			System.out.println("------>>>>LoginOTP method Execution Started<<<<----");
-			
-			//JavascriptExecutor executor = (JavascriptExecutor) driver;
-			//executor.executeScript("window.open()");
-			
-			WebElementOperationsWeb.windowHandle(driver);
-			
-			//driver.get("https://test4.shopper-stop.in/backoffice/login.zul");
-			
-			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_username']")), "saibhavani.p@techouts.com");
-			
-			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@name='j_password']")), "sai@123");
-			
-			Thread.sleep(2000);
-			
-			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Login']")));		
-			
-			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Filter Tree entries']")), "User OTP Model");
-			
-			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='User OTP Model']")));
-			
-			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[@title='Switch search mode']")));
-			
-			//WebElementOperationsWeb.sendKeys(driver.findElement(By.xpath("//span[text()='Mobile']/following::td[2]/div/input")), mobileNumber);
-			
-			WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Search']")));
-			Thread.sleep(2000);
-
-			WebElementOperationsWeb.click(driver.findElement(By.xpath("//span[text()='MOBILE']")));
-			Thread.sleep(2000);
-
-			String otpNum = WebElementOperationsWeb.getAttributeValue(driver.findElement(By.xpath("//span[text()='OTP']/following::div[3]/input")));
-						
-			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//img[@title='Delete']")));
-			
-			//WebElementOperationsWeb.click(driver.findElement(By.xpath("//button[text()='Yes']")));
-			
-			System.out.println("---->>OTP from BO is<<----- " +otpNum);
-			
-			String Decryptotp = decryptusingweb(otpNum);
-			//String Decryptotp = EncryptDecryptPassword.decrypt(otpNum);
-			//System.out.println(Decryptotp);
-			//sendOtpDB(testCaseName, Decryptotp);
-			
-			Thread.sleep(2000);
-			
-			WebElementOperationsWeb.handleParentTab(driver);
-			Thread.sleep(2000);
-
-			List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));
-			
-			for(int i=0; i<otp.size(); i++) {
-				
-				otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
-				//WebElementOperationsWeb.sendKeys(otp, Decryptotp.charAt(i));
-			}
-			
-						
-		} catch (Exception e) {
-			handleOnException("Unknown error occured while clicking Username/Phonenumber Block: "
-					+ SSBLoginFunctionality.getPasswordTypeIn(), e);
-		}
-	}
+	
+	  public void LoginOTP(String testCaseName, String mobileNumber) { try {
+	  
+	  System.out.println("------>>>>LoginOTP method Execution Started<<<<----");
+	  WebElementOperationsWeb.windowHandle(driver); Thread.sleep(2000);
+	  
+	  WebElementOperationsWeb.click(driver.findElement(By.xpath(
+	  "//button[text()='Search']"))); Thread.sleep(2000);
+	  
+	  WebElementOperationsWeb.click(driver.findElement(By.xpath(
+	  "//span[text()='MOBILE']"))); Thread.sleep(2000);
+	  
+	  String otpNum =
+	  WebElementOperationsWeb.getAttributeValue(driver.findElement(By.xpath(
+	  "//span[text()='OTP']/following::div[3]/input")));
+	  
+	  //WebElementOperationsWeb.click(driver.findElement(By.xpath( "//img[@title='Delete']")));
+	  
+	  //WebElementOperationsWeb.click(driver.findElement(By.xpath(  "//button[text()='Yes']")));
+	  
+	  System.out.println("---->>OTP from BO is<<----- " +otpNum);
+	  
+	  String Decryptotp = decryptusingweb(otpNum);
+	  //String Decryptotp =	  EncryptDecryptPassword.decrypt(otpNum); //System.out.println(Decryptotp);
+	  //sendOtpDB(testCaseName, Decryptotp);
+	  
+	  Thread.sleep(2000);
+	  
+	  WebElementOperationsWeb.handleParentTab(driver); Thread.sleep(2000);
+	  
+	  List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));
+	  
+	  for(int i=0; i<otp.size(); i++) {
+	  
+	  otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
+	  //WebElementOperationsWeb.sendKeys(otp, Decryptotp.charAt(i)); }
+	  
+	  
+	  }} catch (Exception e) {
+	  handleOnException("Unknown error occured while clicking Username/Phonenumber Block: "
+	  + SSBLoginFunctionality.getPasswordTypeIn(), e); } }
+	 
 
 	// Click on Log in
 	public void LogInButtonClick() {
@@ -217,7 +162,7 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 			if (WebElementOperationsWeb.isDisplayed(driver, SSBLoginFunctionality.getLogInButton())) {
 				WebElementOperationsWeb.click(driver, SSBLoginFunctionality.getLogInButton());
 			} else {
-				LOG.error("Please enter a valid email or phone number");
+				LOG.error("Error in clicking login button");
 			}
 		} catch (Exception e) {
 			handleOnException("Unknown error occured while clicking LoginButton Block: "
@@ -280,5 +225,186 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 					e);
 		}
 	}
+	
+	public void backofficeLoginEnterUsername(String userName) {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getUserName())) {
+				WebElementOperationsWeb.sendKeys(SSBBackofficeLoginFunctionality.getUserName(), userName);
+			} else {
+				LOG.error("Please enter a valid email");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while sending Username "
+					+ SSBBackofficeLoginFunctionality.getUserName(), e);
+		}
+	}
+   
+	public void backofficeLoginEnterPassword(String password) {
+	try {
+		if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getPassword())) {
+			WebElementOperationsWeb.sendKeys(SSBBackofficeLoginFunctionality.getPassword(), password);
+		} else {
+			LOG.error("Please enter a valid password");
+		}
+	} catch (Exception e) {
+		handleOnException("Unknown error occured while sending password "
+				+ SSBBackofficeLoginFunctionality.getPassword(), e);
+		}
+	}
+	
+	public void backofficeClickOnLoginButton() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getLoginButton())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getLoginButton());
+			} else {
+				LOG.error("Error in clicking login button");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking login button "
+					+ SSBBackofficeLoginFunctionality.getLoginButton(), e);
+			}
+		}
 
+	public void backofficeEnterInUserOtpModel(String searchValue) {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getSendKeysOnUserOtpModel())) {
+				WebElementOperationsWeb.sendKeys(SSBBackofficeLoginFunctionality.getSendKeysOnUserOtpModel(), searchValue);
+			} else {
+				LOG.error("Please enter a valid searchValue");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while sending searchValue "
+					+ SSBBackofficeLoginFunctionality.getSendKeysOnUserOtpModel(), e);
+			}
+		}
+	
+	public void backofficeClickOnUserOtpModel() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getClickOnUserOtpModel())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getClickOnUserOtpModel());
+			} else {
+				LOG.error("Error in clicking UserOtpModel");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking UserOtpModel "
+					+ SSBBackofficeLoginFunctionality.getClickOnUserOtpModel(), e);
+			}
+		}
+	
+	public void backofficeClickOnSearchModel() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getClickOnSearchModel())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getClickOnSearchModel());
+			} else {
+				LOG.error("Error in clicking SearchModel");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking SearchModel "
+					+ SSBBackofficeLoginFunctionality.getClickOnSearchModel(), e);
+			}
+		}
+	
+	public void backofficeEnterMobileNumber(String mobileNumber) {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getEnterMobileNumber())) {
+				WebElementOperationsWeb.sendKeys(SSBBackofficeLoginFunctionality.getEnterMobileNumber(), mobileNumber);
+			} else {
+				LOG.error("Please enter a valid mobileNumber");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while sending mobileNumber "
+					+ SSBBackofficeLoginFunctionality.getEnterMobileNumber(), e);
+			}
+		}
+	
+	public void backofficeClickOnSearchButton() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getClickOnSearchButton())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getClickOnSearchButton());
+			} else {
+				LOG.error("Error in clicking Search button");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking Search button "
+					+ SSBBackofficeLoginFunctionality.getClickOnSearchButton(), e);
+			}
+		}
+	
+	public void backofficeClickOnMobileNumberInResults() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getMobileNumberInResults())) {
+				backofficeClickOnMobileNumberInResultsToGetOtp();
+				backofficeClickOnDeletebutton();
+				backofficeClickOnYesbutton();
+				} else {
+				LOG.info("Mobilenumber not available in results ");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking Mobilenumber in results  "
+					+ SSBBackofficeLoginFunctionality.getMobileNumberInResults(), e);
+			}
+		}
+	
+	public void backofficeClickOnMobileNumberInResultsToGetOtp() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getMobileNumberInResults())) {
+				WebElementOperationsWeb.jsClick(driver, SSBBackofficeLoginFunctionality.getMobileNumberInResults());
+			} else {
+				LOG.error("Error in clicking MobileNumber ");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking MobileNumber  "
+					+ SSBBackofficeLoginFunctionality.getMobileNumberInResults(), e);
+			}
+		}
+	
+	public void backofficeClickOnDeletebutton() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getClickOnDeleteButton())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getClickOnDeleteButton());
+			} else {
+				LOG.error("Error in clicking Delete button ");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking Delete button  "
+					+ SSBBackofficeLoginFunctionality.getClickOnDeleteButton(), e);
+			}
+		}
+	
+	public void backofficeClickOnYesbutton() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getClickOnYesButton())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getClickOnYesButton());
+			} else {
+				LOG.error("Error in clicking Yes button ");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking Yes button  "
+					+ SSBBackofficeLoginFunctionality.getClickOnYesButton(), e);
+			}
+		}
+	public void sendDecryptText(String decryptValue) {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getEnterTextInDecrypt())) {
+				WebElementOperationsWeb.sendKeys(SSBBackofficeLoginFunctionality.getEnterTextInDecrypt(), decryptValue);
+			} else {
+				LOG.error("Please enter a valid decryptValue");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while sending decryptValue "
+					+ SSBBackofficeLoginFunctionality.getEnterTextInDecrypt(), e);
+			}
+		}
+	public void clickOnDecryptbutton() {
+		try {
+			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getClickOnDecryptButton())) {
+				WebElementOperationsWeb.click(driver, SSBBackofficeLoginFunctionality.getClickOnDecryptButton());
+			} else {
+				LOG.error("Error in clicking Decrypt button ");
+			}
+		} catch (Exception e) {
+			handleOnException("Unknown error occured while clicking Decrypt button  "
+					+ SSBBackofficeLoginFunctionality.getClickOnDecryptButton(), e);
+			}
+		}
 }

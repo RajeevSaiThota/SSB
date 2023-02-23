@@ -149,6 +149,9 @@ public final class PathProvider {
 	public static String getSslBackofficeUrl() {
 		return PropertyUtil.getString(ShoppersStopConstantsWeb.SSL_BACKOFFICE_url);
 	}
+	public static String getDecryptUrl() {
+		return PropertyUtil.getString(ShoppersStopConstantsWeb.DECRYPT_url);
+	}
 	public static Path getGenPDFReportFilePath(String timestamp) {
 		String reportName = null;
 		if(StringUtils.isNotBlank(timestamp)) {

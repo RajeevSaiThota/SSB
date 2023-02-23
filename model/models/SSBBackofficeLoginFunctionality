@@ -1,0 +1,89 @@
+{
+	"module": "UserBackofficeLoginFunctionalityCheck",
+	"models": [
+		{
+			"name": "SSBBackofficeLoginFunctionality",
+			"elements": [
+				{
+					"key": "UserName",
+					"value": "//input[@name='j_username']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "Password",
+					"value": "//input[@name='j_password']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "LoginButton",
+					"value": "//button[text()='Login']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "SendKeysOnUserOtpModel",
+					"value": "//input[@placeholder='Filter Tree entries']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickOnUserOtpModel",
+					"value": "//span[text()='User OTP Model']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickOnSearchModel",
+					"value": "//button[@title='Switch search mode']",
+					"type": "XPATH"
+				},
+				{
+					"key": "EnterMobileNumber",
+					"value": "//span[text()='Mobile']/following::td[2]/div/input",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickOnSearchButton",
+					"value": "//button[text()='Search']",
+					"type": "XPATH"
+				},
+				{
+					"key": "MobileNumberInResults",
+					"value": "//span[text()='MOBILE']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickOnDeleteButton",
+					"value": "//img[@title='Delete']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickOnYesButton",
+					"value": "//button[text()='Yes']",
+					"type": "XPATH"
+				},
+				{
+					"key": "GetOtpNumber",
+					"value": "//span[text()='OTP']/following::div[3]/input",
+					"type": "XPATH"
+				},
+				{
+					"key": "GetOtpTextBoxValue",
+					"value": "//input[@type='tel']",
+					"type": "XPATH"
+				},
+				{
+					"key": "EnterTextInDecrypt",
+					"value": "//textarea[@id='hash_input']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ClickOnDecryptButton",
+					"value": "//input[@name='decrypt']",
+					"type": "XPATH"
+				},
+				
+			]
+		}
+	]
+}
