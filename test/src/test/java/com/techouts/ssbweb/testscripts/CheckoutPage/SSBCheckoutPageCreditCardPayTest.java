@@ -4,12 +4,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.sslweb.automation.cartpagedefaultfunctionality.model.CartPageDefaultFunctionality;
 import com.sslweb.automation.checkoutpagenavigationflow.model.CheckoutPageNavigationFlow;
 import com.sslweb.automation.checkoutpageusingcreditcard.model.CheckoutPageUsingCreditCard;
-import com.sslweb.automation.test.AbstractTest;
 import com.sslweb.automation.dto.credentials.User;
 import com.sslweb.automation.provider.credential.CredentialProvider;
+import com.sslweb.automation.test.AbstractTest;
 import com.sslweb.automation.test.page.actions.SSBCheckoutPageCreditCardPayAction;
 import com.techouts.ssbweb.testscripts.retry.DefaultRetryAnalyzer;
 import com.techouts.sslweb.webelement.ops.WebElementOperationsWeb;

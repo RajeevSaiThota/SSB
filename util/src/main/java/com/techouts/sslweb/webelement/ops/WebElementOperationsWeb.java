@@ -640,6 +640,15 @@ public class WebElementOperationsWeb {
 		return isEntered;
 	}
 	
+	public static void enterKeysWithEnter(WebDriver driver,WebElement element,String token) {
+		try {
+			park(0.3);
+			element.clear();
+			element.sendKeys(token,Keys.ENTER);
+		} catch (Exception e) {
+			throwWebElementOperationException("Error occurred while performing enter operation by Robot", e);
+		}
+	}
 	//this method for MouseActions	
 	public static void mouseaction(WebDriver driver,WebElement element)
 	{
@@ -752,16 +761,24 @@ public class WebElementOperationsWeb {
 	/**
 	 *This method switches to the child to parent window
 	 */
-	public static void handleParentTab(WebDriver driver){
+	public static void handleParentTab(WebDriver driver,int arrayNum){
 		  try {
 			  Set<String> allWindowHandles = driver.getWindowHandles();
-			  String parent = (String) allWindowHandles.toArray()[0];
+			  String parent = (String) allWindowHandles.toArray()[arrayNum];
 			  driver.switchTo().window(parent);
 		} catch (Exception e) {
 			throwWebElementOperationException("Could not able to navigate to parent window", e);
 		}
 	}
-
+	public static void handleSecondTab(WebDriver driver){
+		  try {
+			  Set<String> allWindowHandles = driver.getWindowHandles();
+			  String parent = (String) allWindowHandles.toArray()[1];
+			  driver.switchTo().window(parent);
+		} catch (Exception e) {
+			throwWebElementOperationException("Could not able to navigate to parent window", e);
+		}
+	}
 	
 	/**
 	 *This method performs the color-validation 

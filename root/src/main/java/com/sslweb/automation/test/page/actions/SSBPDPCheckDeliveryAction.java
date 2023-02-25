@@ -34,11 +34,12 @@ public class SSBPDPCheckDeliveryAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(3);
 			ssbpdpdeliverydetails.sendProductID(testCaseName, ID);
 			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.enterByRobot();
-			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 			ssbpdpdeliverydetails.ClickonProductCard();
-			WebElementOperationsWeb.park(3);
+			WebElementOperationsWeb.park(3)
+			;
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.windowHandle(driver);
+			
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);
 		}
@@ -49,7 +50,7 @@ public class SSBPDPCheckDeliveryAction extends GlobalExceptionHandler {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			js.executeScript("window.scrollBy(0,200)", " ");
 			ssbpdpdeliverydetails.sendPincode(testCaseName, pincode);
-			ssbpdpdeliverydetails.ClickonChangeButton();
+			ssbpdpdeliverydetails.ClickonCheckButton();
 			ssbpdpdeliverydetails.VerifyStandardDelivery();
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");

@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 import com.sslweb.automation.checkoutpagenavigationflow.model.CheckoutPageNavigationFlow;
 //import com.sslweb.automation.checkoutpageusingcreditcard.model.CheckoutPageUsingCreditCard;
 import com.sslweb.automation.checkoutpageusingdebitcard.model.CheckoutPageUsingDebitCard;
-import com.sslweb.automation.test.AbstractTest;
 import com.sslweb.automation.dto.credentials.User;
 import com.sslweb.automation.provider.credential.CredentialProvider;
+import com.sslweb.automation.test.AbstractTest;
 import com.sslweb.automation.test.page.actions.SSBCheckoutPageDebitCardPayAction;
 import com.techouts.sslweb.webelement.ops.WebElementOperationsWeb;
 

@@ -17,6 +17,8 @@ public class SSBPDPVErifyDetailsTest extends AbstractTest  {
 	private SSBPDPVerifyDetailsAction ssbpdpverifydetailsAction;
 
 	private static final String TEST_CASE_NAME = "SSB_PDP_VerifyDetails"; 
+	private static final String ID = "206862480";
+
 	// private static final String ID = Mention ID to send in search;
 	private static final Logger LOG = Logger.getLogger(SSBPDPVErifyDetailsTest.class.getName());
 
@@ -35,7 +37,7 @@ public class SSBPDPVErifyDetailsTest extends AbstractTest  {
 	public void verifyPDPDetails() {
 		try {
 			
-			ssbpdpverifydetailsAction.NavigateToPDP(TEST_CASE_NAME);
+			ssbpdpverifydetailsAction.NavigateToPDP(TEST_CASE_NAME,ID);
 			ssbpdpverifydetailsAction.VerifyProductDetails(TEST_CASE_NAME);
 			ssbpdpverifydetailsAction.PDPVerifyDetails(TEST_CASE_NAME);			
 			

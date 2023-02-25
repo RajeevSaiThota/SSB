@@ -27,19 +27,19 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 		//js.executeScript("window.scrollBy(0,500)"," ");
 	}
 	
-	public void NavigateToPDP(String testCaseName){
+	public void NavigateToPDP(String testCaseName, String ID){
 		try {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			// Flow for sending product ID in search bar 
-			/*WebElementOperationsWeb.park(3);
+			WebElementOperationsWeb.park(3);
 			ssbpdpverifydetails.sendProductID(testCaseName, ID);
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.enterByRobot();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");*/
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 			ssbpdpverifydetails.ClickonProductCard();
-			WebElementOperationsWeb.park(3);	
+			WebElementOperationsWeb.windowHandle(driver);
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);
 		}
@@ -49,10 +49,11 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 		try {
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			WebElementOperationsWeb.park(5);
-			ssbpdpverifydetails.VerifyProductDetails();
-			WebElementOperationsWeb.park(3);
+			ssbpdpverifydetails.VerifyProductName();
+			ssbpdpverifydetails.VerifyProductRatings();
 			ssbpdpverifydetails.VerifyProductPrice();
-			WebElementOperationsWeb.park(3);
+			ssbpdpverifydetails.VerifyAddToCart();
+			ssbpdpverifydetails.VerifyBuyNow();
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);
@@ -75,11 +76,7 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 			ssbpdpverifydetails.AuthenticProductClick();
 			WebElementOperationsWeb.park(2);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
-			ssbpdpverifydetails.CloseOkayButton();
-			WebElementOperationsWeb.park(2);
-			js.executeScript("window.scrollBy(0,400)"," ");
-			WebElementOperationsWeb.park(2);
-			ssbpdpverifydetails.HowtouseClick();
+			ssbpdpverifydetails.CloseOkayButton();			
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);

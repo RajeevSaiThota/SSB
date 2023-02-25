@@ -2,6 +2,7 @@ package com.sslweb.automation.test.page.actions.helper;
 
 import java.util.Objects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.sslweb.automation.ssbpdpcheckdelivery.model.VerifyDeliveryCheck;
@@ -23,7 +24,7 @@ public class SSBPDPCheckDeliveryHelper extends GlobalExceptionHandler {
 	public void sendProductID(String testCaseName, String ID) {
 		try {
 			if (WebElementOperationsWeb.isDisplayed(driver, VerifyDeliveryCheck.getSearchBarPLP())) {
-				WebElementOperationsWeb.sendKeys(driver, VerifyDeliveryCheck.getSearchBarPLP(), ID);
+				WebElementOperationsWeb.enterKeysWithEnter(driver, VerifyDeliveryCheck.getSearchBarPLP(), ID);
 
 			} else {
 				throw new ShoppersStopBusinessException("Unable to find FullName field in the Checkout Page ["
@@ -39,7 +40,7 @@ public class SSBPDPCheckDeliveryHelper extends GlobalExceptionHandler {
 	// Clicking on Product card to navigate to PDP
 	public void ClickonProductCard() {
 		try {
-			WebElementOperationsWeb.click(driver, VerifyDeliveryCheck.getProductCardClick());
+			WebElementOperationsWeb.jsClick(driver, VerifyDeliveryCheck.getProductCardClick());
 		} catch (Exception e) {
 			handleOnException(
 					"Unknown error occured while clicking Product Card: " + VerifyDeliveryCheck.getProductCardClick(),
@@ -76,7 +77,15 @@ public class SSBPDPCheckDeliveryHelper extends GlobalExceptionHandler {
 					"Unknown error occured while clicking ChangeButton: " + VerifyDeliveryCheck.getChangeButton(), e);
 		}
 	}
+	public void ClickonCheckButton() {
+		try {
+			WebElementOperationsWeb.click(driver, VerifyDeliveryCheck.getCheckButton());
 
+		} catch (Exception e) {
+			handleOnException(
+					"Unknown error occured while clicking CheckButton: " + VerifyDeliveryCheck.getCheckButton(), e);
+		}
+	}
 	// Verifying Standard Delivery
 	public void VerifyStandardDelivery() {
 		if (WebElementOperationsWeb.isDisplayed(driver, VerifyDeliveryCheck.getStandardDelivery())) {

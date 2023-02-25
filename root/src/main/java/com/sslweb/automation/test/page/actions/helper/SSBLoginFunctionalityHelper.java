@@ -64,7 +64,8 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	public void LoginProceed() {
 		try {
 			if (WebElementOperationsWeb.isDisplayed(driver, SSBLoginFunctionality.getProceedButton())) {
-				WebElementOperationsWeb.click(driver, SSBLoginFunctionality.getProceedButton());
+				WebElementOperationsWeb.park(2);
+				WebElementOperationsWeb.jsClick(driver, SSBLoginFunctionality.getProceedButton());
 			} else {
 				LOG.error("Please enter a valid password");
 			}
@@ -87,18 +88,28 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 		return otpNum;
 	}
 	
-	public void enterOtpByDecrypting(String testCaseName) {
+	public void enterOtpByDecrypting(String testCaseName, int arrayNum) {
 		try {
 		String Decryptotp = decryptusingweb(otpNum);
-		WebElementOperationsWeb.handleParentTab(driver);
-		List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));		
-		for(int i=0; i<otp.size(); i++) {			
-			otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
+		WebElementOperationsWeb.park(2);
+		WebElementOperationsWeb.handleParentTab(driver,arrayNum);
+		WebElementOperationsWeb.park(2);
+		List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));	
+		WebElementOperationsWeb.park(2);
+		WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "enterOtpByDecrypting");
+
+		for(int i=1; i<otp.size(); i++) {
+			WebElementOperationsWeb.sendKeys(otp.get(i), String.valueOf(Decryptotp.charAt(i-1)));
+			/*
+			 * otp.get(i).click();
+			 * otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
+			 */
 		}
 	} catch (Exception e) {
 		handleOnException("Error occured while decrypting and entering otp", e);
 	}
 }
+
 /*
  * public void enterOtp(String testCaseName) { try { String Decryptotp =
  * decryptusingweb(getOTP(testCaseName));
@@ -114,7 +125,7 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	
 	// Enter OTP
 	
-	  public void LoginOTP(String testCaseName, String mobileNumber) { try {
+	  public void LoginOTP(String testCaseName, String mobileNumber,int arrayNum) { try {
 	  
 	  System.out.println("------>>>>LoginOTP method Execution Started<<<<----");
 	  WebElementOperationsWeb.windowHandle(driver); Thread.sleep(2000);
@@ -141,7 +152,7 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	  
 	  Thread.sleep(2000);
 	  
-	  WebElementOperationsWeb.handleParentTab(driver); Thread.sleep(2000);
+	  WebElementOperationsWeb.handleParentTab(driver,arrayNum); Thread.sleep(2000);
 	  
 	  List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));
 	  
@@ -188,20 +199,9 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	public String decryptusingweb(String strToDecrypt) {
 		try {
 			
-			//JavascriptExecutor executor = (JavascriptExecutor) driver;
-			//executor.executeScript("window.open()");
-						
-			//driver1 = new HtmlUnitDriver();
-			//driver1.get("https://md5decrypt.net/en/Sha256/#answer");
-			//WebElementOperationsWeb.park(5);
-			
-			driver.get("https://md5decrypt.net/en/Sha256/#answer");
-			
-			Thread.sleep(2000);
-			
-			WebElement element = driver.findElement(By.xpath("//textarea[@id='hash_input']"));
-			element.sendKeys(strToDecrypt);
-			driver.findElement(By.xpath("//input[@name='decrypt']")).click();
+			Thread.sleep(5000);			
+			sendDecryptText(strToDecrypt);
+			clickOnDecryptbutton();
 			WebElementOperationsWeb.park(3);
 			String decryptedOTP = driver.findElement(By.cssSelector("fieldset[id='answer'] b")).getText();
 			System.out.println(decryptedOTP);

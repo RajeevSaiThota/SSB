@@ -55,9 +55,9 @@ public class SSBLoginFunctionalityFacebookAction extends GlobalExceptionHandler 
 			//WebElementOperationsWeb.waitForPageLoad(driver,60);
 			WebElementOperationsWeb.park(5);
 			//WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "LoginSuccess");
-			WebElementOperationsWeb.handleParentTab(driver);	
+//			WebElementOperationsWeb.handleParentTab(driver);	
 		} catch (Exception e) {
-			WebElementOperationsWeb.handleParentTab(driver);
+//			WebElementOperationsWeb.handleParentTab(driver);
 			handleOnException("Error occured while login with Gmail", e);
 		}
 	}

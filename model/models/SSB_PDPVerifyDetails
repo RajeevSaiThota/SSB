@@ -27,10 +27,25 @@
 					"value": "//img[@alt='close_icon']",
 					"type": "XPATH"
 				},
+				{
+					"key": "AddToCartButton",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-15wet8e']",
+					"type": "XPATH"
+				},
+				{
+					"key": "BuyNowButton",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1g3ltc5']",
+					"type": "XPATH"
+				},
 				
 				{
 					"key": "ProductDetailsCheck",
 					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-1itjhtr']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ProductName",
+					"value": "//h1[@class='MuiTypography-root MuiTypography-h1 css-1ov26tq']",
 					"type": "XPATH"
 				},
 				{
@@ -67,7 +82,11 @@
 					"value": "//img[@alt='heart-empty']",
 					"type": "XPATH"
 				},
-				
+				{
+					"key": "Ratings",
+					"value": "//span[@class='MuiRating-root MuiRating-sizeSmall MuiRating-readyOnly css-2w1tmg']",
+					"type": "XPATH"
+				},
 			]
 		}
 	]

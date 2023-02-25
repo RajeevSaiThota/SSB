@@ -39,16 +39,17 @@ public class SSBLoginFunctionalityMobileNumberTest extends AbstractTest {
 					"Mobile Login credential should not be null");
 
 			ssbLoginActions.LoginFunctionalityClick(TEST_CASE_NAME, mobilelogin.getMobileno());
-			ssbLoginActions.openNewTab(TEST_CASE_NAME, mobilelogin.getMobileno());
+			ssbLoginActions.openNewTab(TEST_CASE_NAME);
 			getSslBackofficeUrl();
 			User backofficelogin = Objects.requireNonNull(CredentialProvider.getUser("E010"),
 					"Backoffice Login credential should not be null");
 			ssbLoginActions.backofficeLoginFunctionality(TEST_CASE_NAME, backofficelogin.getEmail(), backofficelogin.getPassword());
-			ssbLoginActions.backofficeMobileNumberVerication(TEST_CASE_NAME,mobilelogin.getMobileno());
+			ssbLoginActions.backofficeMobileNumberVerication(TEST_CASE_NAME,mobilelogin.getMobileno(),0);
+			WebElementOperationsWeb.handleParentTab(DRIVER ,0);
 			ssbLoginActions.LoginFunctionalityusingMobileNumber(mobilelogin.getMobileno(), TEST_CASE_NAME);
 			ssbLoginActions.backofficeGetOtp(TEST_CASE_NAME);
 			getSslDecryptUrl();
-			ssbLoginActions.enterOtp(TEST_CASE_NAME);
+			ssbLoginActions.enterOtp(TEST_CASE_NAME,0);
 			ssbLoginActions.LoginFunctionalityClickonLogInButton(TEST_CASE_NAME);
 		} catch (Exception e) {
 			WebElementOperationsWeb.captureScreenShotOnFail(DRIVER, TEST_CASE_NAME, "VerifyMobileLogin");

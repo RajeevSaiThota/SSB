@@ -75,7 +75,7 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 		try {
 
 			WebElementOperationsWeb.park(15);
-			ssbLoginFunctionalityHelper.LoginOTP(testCaseName, mobileNumber);
+//			ssbLoginFunctionalityHelper.LoginOTP(testCaseName, mobileNumber);
 			WebElementOperationsWeb.park(5);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "Logged in Successfully");
 		} catch (Exception e) {

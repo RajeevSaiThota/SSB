@@ -18,8 +18,8 @@ public class SSBPDPVerifyDeliveryDetailsTest extends AbstractTest  {
 	private SSBPDPCheckDeliveryAction ssbpdpdeliverydetailsAction;
 
 	private static final String TEST_CASE_NAME = "SSB_PDP_CheckDelivery"; 
-	private static final String ID = "204749888";
-	private static final String Pincode = "400050";
+	private static final String ID = "206862480";
+	private static final String Pincode = "400090";
 	private static final Logger LOG = Logger.getLogger(SSBPDPVerifyDeliveryDetailsTest.class.getName());
 
 	public SSBPDPVerifyDeliveryDetailsTest() {

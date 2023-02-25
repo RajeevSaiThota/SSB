@@ -4,7 +4,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
 import com.sslweb.automation.checkoutpagenavigationflow.model.CheckoutPageNavigationFlow;
 import com.sslweb.automation.checkoutpageusingdebitcard.model.CheckoutPageUsingDebitCard;
 import com.sslweb.automation.test.AbstractTest;
