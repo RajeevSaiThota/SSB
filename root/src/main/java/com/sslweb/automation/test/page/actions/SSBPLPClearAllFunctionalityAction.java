@@ -58,6 +58,7 @@ public class SSBPLPClearAllFunctionalityAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(5);
 			ssbclearallfilterFunctionalityHelper.PLPFilterClearAll();
 			WebElementOperationsWeb.park(5);
+			ssbclearallfilterFunctionalityHelper.verifyFiltersEnabled();
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
 		} catch (Exception e) {
 			handleOnException("Not able to Clear all", e);

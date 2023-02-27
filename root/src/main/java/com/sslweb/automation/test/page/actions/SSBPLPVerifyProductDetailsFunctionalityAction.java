@@ -28,9 +28,9 @@ public class SSBPLPVerifyProductDetailsFunctionalityAction extends GlobalExcepti
 		try {
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			js.executeScript("window.scrollBy(0,400)"," ");
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(1);
 			ssbplpVPDhelper.MouseHover();
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(2);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "Quick View");	
 		} catch (Exception e) {
 			handleOnException("Not able to Mouse hover on product card", e);
@@ -40,11 +40,11 @@ public class SSBPLPVerifyProductDetailsFunctionalityAction extends GlobalExcepti
 	public void FetchProductDetails(String testCaseName){
 		try {
 			
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(1);
 			ssbplpVPDhelper.QuickView();
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(2);
 			ssbplpVPDhelper.VerifyProductDetails();
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(2);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "PDP page");	
 		} catch (Exception e) {
 			handleOnException("Not able to click on product details ", e);

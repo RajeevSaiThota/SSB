@@ -4,7 +4,10 @@ import java.util.Objects;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import com.sslweb.automation.plpclearallfunctionality.model.FilterCLearAllFunctionality;
+import com.sslweb.automation.plpverifydetailsfunctionality.model.VerifyDetailsFunctionality;
 import com.sslweb.automation.test.handler.GlobalExceptionHandler;
 import com.techouts.sslweb.webelement.ops.WebElementOperationsWeb;
 
@@ -21,6 +24,8 @@ public class SSBPLPClearAllFunctionalityHelper extends GlobalExceptionHandler{
 		// Clicking on the a filter category(Product Highlight)
 		public void PLPFilterGender() {
 			try {
+				WebElementOperationsWeb.click(driver, FilterCLearAllFunctionality.getProductCard());
+				WebElementOperationsWeb.windowHandle(driver);
 				if(WebElementOperationsWeb.isDisplayed(driver, FilterCLearAllFunctionality.getGenderFilter())) {
 					WebElementOperationsWeb.click(driver, FilterCLearAllFunctionality.getGenderFilter());
 				}else
@@ -54,6 +59,16 @@ public class SSBPLPClearAllFunctionalityHelper extends GlobalExceptionHandler{
 			}
 		}
 		
+		public void verifyFiltersEnabled() {
+			
+			try {
+				WebElement filter = FilterCLearAllFunctionality.getGenderWomanClick();
+				filter.isEnabled();
+				
+			} catch (Exception e) {
+				handleOnException("Unknown error occured while verifying filter enabled functionality: "+FilterCLearAllFunctionality.getGenderWomanClick(), e);
+			}
+		}
 		
 
 }
