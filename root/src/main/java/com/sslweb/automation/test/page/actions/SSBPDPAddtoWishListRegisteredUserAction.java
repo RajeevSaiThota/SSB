@@ -37,12 +37,12 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 			WebElementOperationsWeb.park(3);
 			ssbpdpverifydetails.sendProductID(testCaseName, ID);
 			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "NavigateToPDP");
 			ssbpdpverifydetails.ClickonProductCard();
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.windowHandle(driver);
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in navigating to PDP", e);
 		}
 	}
 	
@@ -52,9 +52,9 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 			WebElementOperationsWeb.park(5);
 			ssbpdpverifydetails.WishListIcon();
 			ssbpdpverifydetails.WishListCountVerification();
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "WishlistIcon");	
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in clicking WishlistIcon", e);
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 			ssbLoginFunctionalityHelper.LoginProceed();
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "Mobile Number Entered");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in LoginFunctionality using MobileNumber", e);
 		}
 	}
 
@@ -91,9 +91,9 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 			WebElementOperationsWeb.park(5);
 			ssbpdpverifydetails.WishListIcon();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "Logout Successfull");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "WishListIcon");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in clicking wishlist icon", e);
 		}
 	}
 

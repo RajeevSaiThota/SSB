@@ -53,12 +53,12 @@ public class SSBPDPVerifyDetailsHelper extends GlobalExceptionHandler {
 				WebElementOperationsWeb.enterKeysWithEnter(driver, VerifyDetailsPDP.getSearchBarPLP(), ID);
 
 			} else {
-				throw new ShoppersStopBusinessException("Unable to find FullName field in the Checkout Page ["
+				throw new ShoppersStopBusinessException("Unable to send product code ["
 						+ VerifyDetailsPDP.getSearchBarPLP() + "]");
 			}
 		} catch (Exception e) {
 			WebElementOperationsWeb.captureScreenShotOnFail(driver, testCaseName, "ProductDetails");
-			handleOnException("Error occured while sending FirstName [" + VerifyDetailsPDP.getSearchBarPLP() + "]", e);
+			handleOnException("Error occured while sending product code [" + VerifyDetailsPDP.getSearchBarPLP() + "]", e);
 		}
 	}
 
@@ -175,7 +175,7 @@ public class SSBPDPVerifyDetailsHelper extends GlobalExceptionHandler {
 			WebElementOperationsWeb.click(driver, VerifyDetailsPDP.getHowtoUseClick());
 		} catch (Exception e) {
 			handleOnException(
-					"Unknown error occured while clicking on Okay Button: " + VerifyDetailsPDP.getHowtoUseClick(), e);
+					"Unknown error occured while clicking on Howtouse Button: " + VerifyDetailsPDP.getHowtoUseClick(), e);
 		}
 	}
 	// WishList Icon

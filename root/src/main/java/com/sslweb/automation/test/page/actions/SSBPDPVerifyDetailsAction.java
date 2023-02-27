@@ -37,11 +37,11 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.enterByRobot();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "NavigateToPDP");
 			ssbpdpverifydetails.ClickonProductCard();
 			WebElementOperationsWeb.windowHandle(driver);
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("NavigateToPDP failed", e);
 		}
 	}
 	
@@ -54,9 +54,9 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 			ssbpdpverifydetails.VerifyProductPrice();
 			ssbpdpverifydetails.VerifyAddToCart();
 			ssbpdpverifydetails.VerifyBuyNow();
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "ProductDetails");	
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Verifying ProductDetails failed", e);
 		}
 	}
 	
@@ -66,20 +66,20 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(5);
 			ssbpdpverifydetails.ClickonProductImage();
 			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "PDPVerifyDetails");	
 			ssbpdpverifydetails.ClickonCloseButton();
 			WebElementOperationsWeb.park(2);
 			ssbpdpverifydetails.EasyReturnsClick();
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "PDPVerifyDetails");
 			ssbpdpverifydetails.CloseOkayButton();
 			WebElementOperationsWeb.park(2);
 			ssbpdpverifydetails.AuthenticProductClick();
 			WebElementOperationsWeb.park(2);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "PDPVerifyDetails");
 			ssbpdpverifydetails.CloseOkayButton();			
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "PDPVerifyDetails");	
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("PDPVerifyDetails failed", e);
 		}
 	}
 	

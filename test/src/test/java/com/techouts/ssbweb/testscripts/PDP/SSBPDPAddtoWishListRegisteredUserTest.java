@@ -71,7 +71,7 @@ public class SSBPDPAddtoWishListRegisteredUserTest extends AbstractTest  {
 			WebElementOperationsWeb.waitForPageLoad(DRIVER, 40);
 			LOGIN_ACTIONS.doLogout();
 			addRetryTest(new Object() {}.getClass().getEnclosingMethod().getName());
-			handleOnException("VerifyProductDetailsFailed", e);
+			handleOnException("Verify AddToWishlist Failed", e);
 		}
 	}
 	

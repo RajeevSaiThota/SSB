@@ -44,13 +44,13 @@ public class SSBPDPAddtoWishListGuestUserAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(3);
 			ssbpdpverifydetails.sendProductID(testCaseName, ID);
 			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "SendProduct");
 			ssbpdpverifydetails.ClickonProductCard();
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.windowHandle(driver);
 
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in NavigateToPDP", e);
 		}
 	}
 
@@ -58,9 +58,9 @@ public class SSBPDPAddtoWishListGuestUserAction extends GlobalExceptionHandler {
 		try {
 			WebElementOperationsWeb.park(5);
 			ssbpdpverifydetails.WishListIcon();
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "wishlistIcon");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in clicking wishlistIcon ", e);
 		}
 	}
 	/*

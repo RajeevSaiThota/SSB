@@ -37,11 +37,11 @@ public class SSBPDPCheckDeliveryAction extends GlobalExceptionHandler {
 			ssbpdpdeliverydetails.ClickonProductCard();
 			WebElementOperationsWeb.park(3)
 			;
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "NavigateToPDP");
 			WebElementOperationsWeb.windowHandle(driver);
 			
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in navigating to PDP", e);
 		}
 	}
 
@@ -53,12 +53,12 @@ public class SSBPDPCheckDeliveryAction extends GlobalExceptionHandler {
 			ssbpdpdeliverydetails.ClickonCheckButton();
 			ssbpdpdeliverydetails.VerifyStandardDelivery();
 			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "VerifyStandardDelivery");
 			ssbpdpdeliverydetails.VerifyExpressDelivery();
 			WebElementOperationsWeb.park(2);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "VerifyExpressDelivery");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in verifying delivery modes", e);
 		}
 	}
 
