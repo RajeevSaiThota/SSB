@@ -133,12 +133,21 @@ public class SSBPDPAddtoWishListGuestUserAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountregistrationfunctionality.VerifyOTP();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "loginProceed");
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);
 		}
 	}
 
+	public void WishlistIconCountVerication(String testCaseName){
+		try {
+			WebElementOperationsWeb.park(5);
+			ssbpdpverifydetails.WishListCountVerification();
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "WishlistIconCountVerication");	
+		} catch (Exception e) {
+			handleOnException("Wishlist count not displayed", e);
+		}
+	}
 	public void RegistrationFormFilling(String sheetname, String testCaseName, int serialno) {
 		try {
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);

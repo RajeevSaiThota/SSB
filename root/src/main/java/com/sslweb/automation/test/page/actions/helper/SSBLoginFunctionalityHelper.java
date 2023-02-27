@@ -88,18 +88,25 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 		return otpNum;
 	}
 	
-	public void enterOtpByDecrypting(String testCaseName, int arrayNum) {
+	public void enterOtpByDecrypting(String testCaseName, int arrayNum, int otpCheckbox) {
 		try {
+			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 		String Decryptotp = decryptusingweb(otpNum);
 		WebElementOperationsWeb.park(2);
 		WebElementOperationsWeb.handleParentTab(driver,arrayNum);
-		WebElementOperationsWeb.park(2);
+		WebElementOperationsWeb.park(1);
 		List<WebElement> otp = driver.findElements(By.xpath("//input[@type='tel']"));	
-		WebElementOperationsWeb.park(2);
+		WebElementOperationsWeb.park(1);
 		WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "enterOtpByDecrypting");
 
-		for(int i=1; i<otp.size(); i++) {
+		for(int i=otpCheckbox; i<otp.size(); i++) {
+			if(otpCheckbox==0) {
+			WebElementOperationsWeb.sendKeys(otp.get(i), String.valueOf(Decryptotp.charAt(i)));
+			}
+			else if(otpCheckbox==1){
 			WebElementOperationsWeb.sendKeys(otp.get(i), String.valueOf(Decryptotp.charAt(i-1)));
+
+			}
 			/*
 			 * otp.get(i).click();
 			 * otp.get(i).sendKeys(String.valueOf(Decryptotp.charAt(i)));
@@ -199,10 +206,12 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	public String decryptusingweb(String strToDecrypt) {
 		try {
 			
-			Thread.sleep(5000);			
+			WebElementOperationsWeb.park(10);
 			sendDecryptText(strToDecrypt);
+			WebElementOperationsWeb.park(5);
 			clickOnDecryptbutton();
-			WebElementOperationsWeb.park(3);
+			WebElementOperationsWeb.waitForPageLoad(driver, 60);
+			WebElementOperationsWeb.park(7);
 			String decryptedOTP = driver.findElement(By.cssSelector("fieldset[id='answer'] b")).getText();
 			System.out.println(decryptedOTP);
 			return decryptedOTP;
@@ -332,6 +341,7 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 	
 	public void backofficeClickOnMobileNumberInResults() {
 		try {
+			WebElementOperationsWeb.park(2);
 			if (WebElementOperationsWeb.isDisplayed(driver, SSBBackofficeLoginFunctionality.getMobileNumberInResults())) {
 				backofficeClickOnMobileNumberInResultsToGetOtp();
 				backofficeClickOnDeletebutton();

@@ -181,7 +181,22 @@ public class SSBPDPVerifyDetailsHelper extends GlobalExceptionHandler {
 	// WishList Icon
 	public void WishListIcon() {
 		try {
+			WebElementOperationsWeb.isDisplayed(driver, VerifyDetailsPDP.getWishListIcon());
 			WebElementOperationsWeb.click(driver, VerifyDetailsPDP.getWishListIcon());
+			WebElementOperationsWeb.park(5);
+		} catch (Exception e) {
+			handleOnException(
+					"Unknown error occured while clicking on Wishlist Button: " + VerifyDetailsPDP.getWishListIcon(), e);
+		}
+	}
+	public void WishListCountVerification() {
+		try {
+			WebElementOperationsWeb.isDisplayed(driver, VerifyDetailsPDP.getTopWishlistIcon());
+			String wishlistCount=WebElementOperationsWeb.getText(driver, VerifyDetailsPDP.getTopWishlistIcon());
+			if(wishlistCount.length()<1) {
+				LOG.error("Product not added to wishlist");
+			}
+			
 		} catch (Exception e) {
 			handleOnException(
 					"Unknown error occured while clicking on Wishlist Button: " + VerifyDetailsPDP.getWishListIcon(), e);

@@ -65,12 +65,13 @@ public class SSBPDPAddtoWishListGuestUserTest extends AbstractTest  {
 			ssbLoginActions.LoginFunctionalityusingMobileNumber(mobilelogin.getMobileno(), TEST_CASE_NAME);
 			ssbLoginActions.backofficeGetOtp(TEST_CASE_NAME);
 			getSslDecryptUrl();
-			ssbLoginActions.enterOtp(TEST_CASE_NAME,1);
+			ssbLoginActions.enterOtp(TEST_CASE_NAME,1,1);
 			ssbLoginActions.LoginFunctionalityClickonLogInButton(TEST_CASE_NAME);
-						
+			ssbpdpwishlistAction.WishlistIcon(TEST_CASE_NAME);
+			ssbpdpwishlistAction.WishlistIconCountVerication(TEST_CASE_NAME);		
 			
 		} catch (Exception e) {
-			WebElementOperationsWeb.captureScreenShotOnFail(DRIVER, TEST_CASE_NAME, "Verify WishList Click ");
+			WebElementOperationsWeb.captureScreenShotOnFail(DRIVER, TEST_CASE_NAME, "Verify WishList Click For GuestUser ");
 			getSslPage();
 			WebElementOperationsWeb.waitForPageLoad(DRIVER, 40);
 			LOGIN_ACTIONS.doLogout();

@@ -87,6 +87,11 @@
 					"value": "//span[@class='MuiRating-root MuiRating-sizeSmall MuiRating-readyOnly css-2w1tmg']",
 					"type": "XPATH"
 				},
+				{
+					"key": "TopWishlistIcon",
+					"value": "//span[@class='MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular BaseBadge-badge css-hlg6b8']",
+					"type": "XPATH"
+				},
 			]
 		}
 	]

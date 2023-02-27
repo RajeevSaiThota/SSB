@@ -28,7 +28,7 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			WebElementOperationsWeb.park(5);
 			ssbLoginFunctionalityHelper.clickOnAccount();
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(2);
 		} catch (Exception e) {
 			handleOnException("Unable to click on Account icon", e);
 		}
@@ -46,7 +46,7 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 	public void backofficeLoginFunctionality(String testCaseName,String username, String password) {
 		try {
 
-			WebElementOperationsWeb.park(5);
+			WebElementOperationsWeb.park(2);
 			ssbLoginFunctionalityHelper.backofficeLoginEnterUsername(username);
 			ssbLoginFunctionalityHelper.backofficeLoginEnterPassword(password);
 			ssbLoginFunctionalityHelper.backofficeClickOnLoginButton();
@@ -60,7 +60,6 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 		try {
 			WebElementOperationsWeb.park(1);
 			ssbLoginFunctionalityHelper.LoginEnterUsername(username);
-			WebElementOperationsWeb.park(3);
 			ssbLoginFunctionalityHelper.LoginProceed();	
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "Mobile Number Entered");
@@ -72,11 +71,12 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 	public void backofficeMobileNumberVerication( String testCaseName,String mobileNumber,int arrayNum) {
 		try {			
 			ssbLoginFunctionalityHelper.backofficeEnterInUserOtpModel("User OTP Model");
-			WebElementOperationsWeb.park(3);
+			WebElementOperationsWeb.park(2);
 			ssbLoginFunctionalityHelper.backofficeClickOnUserOtpModel();
 			ssbLoginFunctionalityHelper.backofficeClickOnSearchModel();
 			ssbLoginFunctionalityHelper.backofficeEnterMobileNumber(mobileNumber);
 			ssbLoginFunctionalityHelper.backofficeClickOnSearchButton();
+			WebElementOperationsWeb.park(2);
 			ssbLoginFunctionalityHelper.backofficeClickOnMobileNumberInResults();
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "MobileNumber Verification in Backoffice");
 
@@ -94,7 +94,7 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 			ssbLoginFunctionalityHelper.backofficeClickOnSearchButton();
 			Thread.sleep(3000);
 			ssbLoginFunctionalityHelper.backofficeClickOnMobileNumberInResultsToGetOtp();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			ssbLoginFunctionalityHelper.getOTP(testCaseName);
 			Thread.sleep(2000);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "MobileNumber Verification in Backoffice");
@@ -160,8 +160,8 @@ public class SSBLoginFunctionalityAction extends GlobalExceptionHandler {
 		}
 	}
 
-	public void enterOtp(String testCaseName,int arrayNum) {
-		ssbLoginFunctionalityHelper.enterOtpByDecrypting(testCaseName,arrayNum)	;	
+	public void enterOtp(String testCaseName,int arrayNum,int otpCheckbox) {
+		ssbLoginFunctionalityHelper.enterOtpByDecrypting(testCaseName,arrayNum,otpCheckbox)	;	
 	}
 	
 }

@@ -37,11 +37,10 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 			WebElementOperationsWeb.park(3);
 			ssbpdpverifydetails.sendProductID(testCaseName, ID);
 			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.enterByRobot();
-			WebElementOperationsWeb.park(5);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 			ssbpdpverifydetails.ClickonProductCard();
-			WebElementOperationsWeb.park(3);	
+			WebElementOperationsWeb.park(3);
+			WebElementOperationsWeb.windowHandle(driver);
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);
 		}
@@ -52,6 +51,7 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 		try {
 			WebElementOperationsWeb.park(5);
 			ssbpdpverifydetails.WishListIcon();
+			ssbpdpverifydetails.WishListCountVerification();
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");	
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);

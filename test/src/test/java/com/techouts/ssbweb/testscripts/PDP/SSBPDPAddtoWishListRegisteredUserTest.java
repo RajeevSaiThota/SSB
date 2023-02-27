@@ -59,7 +59,7 @@ public class SSBPDPAddtoWishListRegisteredUserTest extends AbstractTest  {
 			ssbLoginActions.LoginFunctionalityusingMobileNumber(mobilelogin.getMobileno(), TEST_CASE_NAME);
 			ssbLoginActions.backofficeGetOtp(TEST_CASE_NAME);
 			getSslDecryptUrl();
-			ssbLoginActions.enterOtp(TEST_CASE_NAME,0);
+			ssbLoginActions.enterOtp(TEST_CASE_NAME,0,0);
 			ssbLoginActions.LoginFunctionalityClickonLogInButton(TEST_CASE_NAME);
 			ssbpdpwishlistAction.NavigateToPDP(TEST_CASE_NAME, ID);
 			ssbpdpwishlistAction.WishlistIcon(TEST_CASE_NAME);
