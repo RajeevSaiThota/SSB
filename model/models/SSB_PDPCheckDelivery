@@ -34,12 +34,12 @@
 				},
 				{
 					"key": "StandardDelivery",
-					"value": "//input[@value='Standard Delivery']",
+					"value": "//span[contains(text(),'Standard Delivery')]",
 					"type": "XPATH"
 				},
 				{
 					"key": "ExpressDelivery",
-					"value": "//input[@value='Express Delivery']",
+					"value": "//span[contains(text(),'Express Delivery')]",
 					"type": "XPATH"
 				},
 				
@@ -48,7 +48,21 @@
 					"value": "//label[@class='MuiFormControlLabel-root Mui-disabled MuiFormControlLabel-labelPlacementEnd css-y95qgz']",
 					"type": "XPATH"
 				},
-				
+				{
+					"key": "StandardDeliveryRadioBtn",
+					"value": "//input[@class='PrivateSwitchBase-input css-1m9pwf3' and @value ='Standard Delivery']",
+					"type": "XPATH"
+				},
+				{
+					"key": "ExpressDeliveryRadioBtn",
+					"value": "//input[@class='PrivateSwitchBase-input css-1m9pwf3' and @value ='Express Delivery']",
+					"type": "XPATH"
+				},
+				{
+					"key": "PickupRadioBtn",
+					"value": "//input[@class='PrivateSwitchBase-input css-1m9pwf3' and @value ='Pay & Pickup']",
+					"type": "XPATH"
+				},
 			]
 		}
 	]

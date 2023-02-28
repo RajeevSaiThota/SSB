@@ -24,25 +24,23 @@ public class SSBPDPAddtoWishListGuestUserAction extends GlobalExceptionHandler {
 
 	private SSBPDPVerifyDetailsHelper ssbpdpverifydetails;
 	private SSBRegistrationFunctionalityHelper ssbmyaccountregistrationfunctionality;
-	private SSBLoginFunctionalityHelper ssbLoginFunctionalityHelper;
 
 	public SSBPDPAddtoWishListGuestUserAction(WebDriver driver, ExcelRepository repository) {
 		this.driver = Objects.requireNonNull(driver,
 				"WebDriver cannot be null to perform actions in AllFieldsDisplayedActions class");
-		ssbpdpverifydetails = new SSBPDPVerifyDetailsHelper(driver);
+		ssbpdpverifydetails = new SSBPDPVerifyDetailsHelper(driver, repository);
 		ssbmyaccountregistrationfunctionality = new SSBRegistrationFunctionalityHelper(driver, repository);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)", " ");
-		ssbLoginFunctionalityHelper = new SSBLoginFunctionalityHelper(driver); // classname objname = newclass name
 
 	}
 
-	public void NavigateToPDP(String testCaseName, String ID) {
+	public void NavigateToPDP(String testCaseName, String  sheetName,int serialNo) {
 		try {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			WebElementOperationsWeb.park(3);
-			ssbpdpverifydetails.sendProductID(testCaseName, ID);
+			ssbpdpverifydetails.sendProductID(testCaseName, sheetName,serialNo);
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "SendProduct");
 			ssbpdpverifydetails.ClickonProductCard();

@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-
+import com.sslweb.automation.repo.ExcelRepository;
 import com.sslweb.automation.test.handler.GlobalExceptionHandler;
 import com.sslweb.automation.test.page.actions.helper.SSBLoginFunctionalityHelper;
 import com.sslweb.automation.test.page.actions.helper.SSBPDPVerifyDetailsHelper;
@@ -22,20 +22,20 @@ public class SSBPDPAddtoWishListRegisteredUserAction extends GlobalExceptionHand
 	private SSBLoginFunctionalityHelper ssbLoginFunctionalityHelper;
 	
 	
-	public SSBPDPAddtoWishListRegisteredUserAction(WebDriver driver){
+	public SSBPDPAddtoWishListRegisteredUserAction(WebDriver driver,ExcelRepository repository){
 		this.driver = Objects.requireNonNull(driver, "WebDriver cannot be null to perform actions in AllFieldsDisplayedActions class");
-		ssbpdpverifydetails = new SSBPDPVerifyDetailsHelper(driver);
+		ssbpdpverifydetails = new SSBPDPVerifyDetailsHelper(driver, repository);
 		ssbLoginFunctionalityHelper = new SSBLoginFunctionalityHelper(driver);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)"," ");
 	}
 	
-	public void NavigateToPDP(String testCaseName, String ID){
+	public void NavigateToPDP(String testCaseName, String sheetName,int serialNo){
 		try {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			WebElementOperationsWeb.park(3);
-			ssbpdpverifydetails.sendProductID(testCaseName, ID);
+			ssbpdpverifydetails.sendProductID(testCaseName,sheetName,serialNo);
 			WebElementOperationsWeb.park(3);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "NavigateToPDP");
 			ssbpdpverifydetails.ClickonProductCard();
