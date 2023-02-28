@@ -112,14 +112,9 @@ public final class Sheet {
 	public static final class PdpPage {
 		public static final int SERIAL_NO = 0;
 		public static final int TESTCASE_NAME = 1;
-		public static final int PAGE_TITLE = 2;
-		public static final int L1_CATEGORY = 3;
-		public static final int L2_CATEGORY = 4;
-		public static final int REVIEW_TITLE = 5;
-		public static final int DESCRIPTION = 6;
-		public static final int MESSAGE = 7;
-		public static final int POST_CODE = 8;
-		public static final int ALTERNATE_POST_CODE = 9;
+		public static final int POST_CODE = 2;
+		public static final int ALTERNATE_POST_CODE = 3;
+		public static final int PRODUCT_CODE = 4;
 
 		private PdpPage() {}
 	}

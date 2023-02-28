@@ -24,14 +24,14 @@ public class SSBPDPAddtoWishListRegisteredUserTest extends AbstractTest  {
 	private SSBPDPAddtoWishListRegisteredUserAction ssbpdpwishlistAction;
 
 	private static final String TEST_CASE_NAME = "SSB_PDP_Verify_AddToWishList_RegisteredUser"; 
-	private static final String ID = "206862480";
+	private static final int SERIAL_NO = 4;
 	private static final Logger LOG = Logger.getLogger(SSBPDPAddtoWishListRegisteredUserTest.class.getName());
 	private SSBLoginFunctionalityAction ssbLoginActions;
 
 	public SSBPDPAddtoWishListRegisteredUserTest() {
 		new SSBPDPVerifyDetails().init(DRIVER);
 		new UserLoginFunctionalityCheck().init(DRIVER);
-		ssbpdpwishlistAction = new SSBPDPAddtoWishListRegisteredUserAction(DRIVER);
+		ssbpdpwishlistAction = new SSBPDPAddtoWishListRegisteredUserAction(DRIVER, REPOSITORY);
 		ssbLoginActions = new SSBLoginFunctionalityAction(DRIVER);
 		new UserLoginFunctionalityCheck().init(DRIVER);
 		new UserBackofficeLoginFunctionalityCheck().init(DRIVER);
@@ -61,7 +61,7 @@ public class SSBPDPAddtoWishListRegisteredUserTest extends AbstractTest  {
 			getSslDecryptUrl();
 			ssbLoginActions.enterOtp(TEST_CASE_NAME,0,0);
 			ssbLoginActions.LoginFunctionalityClickonLogInButton(TEST_CASE_NAME);
-			ssbpdpwishlistAction.NavigateToPDP(TEST_CASE_NAME, ID);
+			ssbpdpwishlistAction.NavigateToPDP(TEST_CASE_NAME,PDP_SHEET,SERIAL_NO);
 			ssbpdpwishlistAction.WishlistIcon(TEST_CASE_NAME);
 			
 			

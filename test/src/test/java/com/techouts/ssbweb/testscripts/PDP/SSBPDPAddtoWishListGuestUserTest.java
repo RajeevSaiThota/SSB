@@ -26,8 +26,7 @@ public class SSBPDPAddtoWishListGuestUserTest extends AbstractTest  {
 	private SSBPDPAddtoWishListGuestUserAction ssbpdpwishlistAction;
 
 	private static final String TEST_CASE_NAME = "SSB_PDP_Verify_AddToWishList_GuestUser"; 
-	private static final String ID = "206862480";
-	private static final int SERIAL_NO2 = 6;
+	private static final int SERIAL_NO = 3;
 	private static final Logger LOG = Logger.getLogger(SSBPDPAddtoWishListGuestUserTest.class.getName());
 	private SSBLoginFunctionalityAction ssbLoginActions;
 
@@ -53,7 +52,7 @@ public class SSBPDPAddtoWishListGuestUserTest extends AbstractTest  {
 			User mobilelogin = Objects.requireNonNull(CredentialProvider.getUser("E002"),
 					"Mobile Login credential should not be null");
 
-			ssbpdpwishlistAction.NavigateToPDP(TEST_CASE_NAME, ID);
+			ssbpdpwishlistAction.NavigateToPDP(TEST_CASE_NAME, PDP_SHEET,SERIAL_NO);
 			ssbpdpwishlistAction.WishlistIcon(TEST_CASE_NAME);
 			ssbLoginActions.openNewTab(TEST_CASE_NAME);
 			getSslBackofficeUrl();

@@ -5,20 +5,25 @@ import java.util.Objects;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
+import com.sslweb.automation.repo.ExcelRepository;
 import com.sslweb.automation.ssbpdpverifydetails.model.VerifyDetailsPDP;
 import com.sslweb.automation.test.handler.GlobalExceptionHandler;
 import com.sslweb.automation.userbackofficeloginfunctionalitycheck.model.SSBBackofficeLoginFunctionality;
+import com.sslweb.automation.util.Sheet;
 import com.sslweb.automation.util.exceptions.ShoppersStopBusinessException;
 import com.techouts.sslweb.webelement.ops.WebElementOperationsWeb;
 
 public class SSBPDPVerifyDetailsHelper extends GlobalExceptionHandler {
 
 	private WebDriver driver = null;
+	private ExcelRepository repository;
 	private static final Logger LOG = Logger.getLogger(SSBPDPVerifyDetailsHelper.class);
 
-	public SSBPDPVerifyDetailsHelper(WebDriver driver) {
+	public SSBPDPVerifyDetailsHelper(WebDriver driver,ExcelRepository repository) {
 		this.driver = Objects.requireNonNull(driver,
 				"WebDriver cannot be null to perform actions in ProfileIconWidge Actions Helper class");
+		this.repository = Objects.requireNonNull(repository, "Repository cannot be null ");
+
 	}
 	// Navigation to PDP page from Home Page
 
@@ -47,10 +52,10 @@ public class SSBPDPVerifyDetailsHelper extends GlobalExceptionHandler {
 			}
 		}
 	// Search Box
-	public void sendProductID(String testCaseName, String ID) {
+	public void sendProductID(String testCaseName, String sheetName, int serialNo) {
 		try {
 			if (WebElementOperationsWeb.isDisplayed(driver, VerifyDetailsPDP.getSearchBarPLP())) {
-				WebElementOperationsWeb.enterKeysWithEnter(driver, VerifyDetailsPDP.getSearchBarPLP(), ID);
+				WebElementOperationsWeb.enterKeysWithEnter(driver, VerifyDetailsPDP.getSearchBarPLP(), repository.readStringFrom(sheetName, Sheet.PdpPage.PRODUCT_CODE, serialNo));
 
 			} else {
 				throw new ShoppersStopBusinessException("Unable to send product code ["
