@@ -21,6 +21,42 @@
 					"value": "//p[text()='VIEW PRODUCT DETAILS']",
 					"type": "XPATH"
 				},
+				
+				{
+					"key": "productCard",
+					"value": "//img[@alt='Flat 50% Discount']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "productName",
+					"value": "(//div[@aria-label='contentSection'])[1]/p",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "productNameInQuickView",
+					"value": "(//a[contains(@class,'MuiLink-underlineNone')]/p)[1]",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "priceInQuickView",
+					"value": "//p[text()='MRP: ₹']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "addToCartButton",
+					"value": "(//a[contains(@class,'MuiLink-underlineNone')]/p)[1]/following::button/p[text()='ADD TO CART']",
+					"type": "XPATH"
+				},
+				
+				{
+					"key": "buyNowButton",
+					"value": "(//a[contains(@class,'MuiLink-underlineNone')]/p)[1]/following::button/p[text()='BUY NOW']",
+					"type": "XPATH"
+				},
 								
 			]
 		}

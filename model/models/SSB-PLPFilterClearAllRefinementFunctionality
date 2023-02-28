@@ -21,6 +21,12 @@
 					"value": "//p[text()='CLEAR ALL']",
 					"type": "XPATH"
 				},
+				
+				{
+					"key": "productCard",
+					"value": "//img[@alt='Flat 50% Discount']",
+					"type": "XPATH"
+				},
 								
 			]
 		}
