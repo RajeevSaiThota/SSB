@@ -56,6 +56,9 @@ public class SSBMyAccountOrderPageTrackOrderFunctionalityAction extends GlobalEx
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountorderpagetrackorder.ClickonMyOrders();
 			WebElementOperationsWeb.park(5);
+			if(!ssbmyaccountorderpagetrackorder.MyAccountBreadCrumb().equals("My Orders")) {
+				System.out.println("User not navigated to Myorders page");
+			}
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);

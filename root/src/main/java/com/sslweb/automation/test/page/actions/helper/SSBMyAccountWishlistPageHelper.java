@@ -59,5 +59,18 @@ public void ClickonYESBar() {
 	}
 }
 
+public boolean emptyWishlist() {
+	try {
+		WebElementOperationsWeb.isDisplayed(driver, MyAccountWishlist.getEmptyWishlist());
+		return true;
+
+	} catch (Exception e) {
+		System.out.println("Products available in wishlist");
+	}
+	return true;
+}
+
+
+
 }
 

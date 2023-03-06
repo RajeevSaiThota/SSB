@@ -2,6 +2,7 @@ package com.sslweb.automation.test.page.actions;
 
 import java.util.Objects;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,7 @@ public class SSBMyAccountProfilePageDeletingAddressAction extends GlobalExceptio
 
 	private SSBLoginFunctionalityHelper ssbloginflow;
 	private SSBMyAccountProfilePageDeleteAddressHelper ssbmyaccountppdeleteaddress;
+	private static final Logger LOG = Logger.getLogger(SSBMyAccountProfilePageDeletingAddressAction.class);
 
 	public SSBMyAccountProfilePageDeletingAddressAction(WebDriver driver, ExcelRepository repository) {
 		this.driver = Objects.requireNonNull(driver,
@@ -59,7 +61,7 @@ public class SSBMyAccountProfilePageDeletingAddressAction extends GlobalExceptio
 			WebElementOperationsWeb.park(5);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in navigating profile page", e);
 		}
 	}
 
@@ -69,13 +71,18 @@ public class SSBMyAccountProfilePageDeletingAddressAction extends GlobalExceptio
 			WebElementOperationsWeb.park(5);
 			js.executeScript("window.scrollBy(0,400)", " ");
 			WebElementOperationsWeb.park(5);
+			ssbmyaccountppdeleteaddress.DeleteAddress();
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "DeleteAddress");
 			ssbmyaccountppdeleteaddress.ClickonDeleteAddress();
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountppdeleteaddress.ClickonYes();
-			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.park(2);
+			if(!ssbmyaccountppdeleteaddress.DeleteAddressSuccessAlert().contains("Address Deleted Successfully!")) {
+				LOG.error("DeleteAddress SuccessAlert is not displayed");
+			}
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "DeletingAddress");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in Deleting Address", e);
 		}
 	}
 }

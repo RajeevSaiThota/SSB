@@ -56,6 +56,10 @@ public class SSBMyAccountOrderPageFilterFunctionalityAction extends GlobalExcept
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountorderpagefilter.ClickonMyOrders();
 			WebElementOperationsWeb.park(5);
+			if(!ssbmyaccountorderpagefilter.MyAccountBreadCrumb().equals("My Orders")) {
+				System.out.println("User not navigated to Myorders page");
+			}
+			
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);

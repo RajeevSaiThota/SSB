@@ -63,6 +63,11 @@
 					"value": "(//div[@class='MuiBox-root css-1wh8x1w'])[1]",
 					"type": "XPATH"
 				},
+				{
+					"key": "AddAddressSuccessAlert",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-16urzb8']",
+					"type": "XPATH"
+				},
 								
 			]
 		}

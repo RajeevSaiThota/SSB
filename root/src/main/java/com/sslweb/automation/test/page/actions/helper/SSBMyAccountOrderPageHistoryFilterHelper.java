@@ -48,7 +48,18 @@ public class SSBMyAccountOrderPageHistoryFilterHelper extends GlobalExceptionHan
 					+ OrderPageFilter.getFilterBarClick(), e);
 		}
 	}
-
+	String breadcrumb=null;
+	public String MyAccountBreadCrumb() {
+		try {
+			breadcrumb=WebElementOperationsWeb.getText(driver, OrderPageFilter.getMyAccountBreadCrumb());
+		
+		}
+		 catch (Exception e) {
+				handleOnException("Unknown error occured while getting breadCrumb text : "
+						+ OrderPageFilter.getMyAccountBreadCrumb(), e);
+			}
+		return breadcrumb;
+	}
 	// clicking on a filter
 
 	public void ClickonFilterSelect() {

@@ -32,6 +32,11 @@
 					"key": "CloseIcon",
 					"value": "//img[@alt='close_icon']",
 					"type": "XPATH"
+				},
+				{
+					"key": "MyAccountBreadCrumb",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-f753rt']",
+					"type": "XPATH"
 				},								
 			]
 		}

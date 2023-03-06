@@ -25,8 +25,12 @@
 					"key": "ClickonYES",
 					"value": "(//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1spl1x'])[1]",
 					"type": "XPATH"
-				},
-											
+				},							
+				{
+					"key": "EmptyWishlist",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-q1oos2']",
+					"type": "XPATH"
+				}							
 			]
 		}
 	]

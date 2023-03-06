@@ -26,7 +26,11 @@
 					"value": "//p[text()='YES']",
 					"type": "XPATH"
 				},
-								
+				{
+					"key": "DeleteAddressSuccessAlert",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-16urzb8']",
+					"type": "XPATH"
+				},				
 			]
 		}
 	]

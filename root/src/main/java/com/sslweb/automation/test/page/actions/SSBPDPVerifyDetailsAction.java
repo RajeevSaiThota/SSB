@@ -35,8 +35,6 @@ public class SSBPDPVerifyDetailsAction extends GlobalExceptionHandler {
 			// Flow for sending product ID in search bar 
 			WebElementOperationsWeb.park(3);
 			ssbpdpverifydetails.sendProductID(testCaseName, sheetName,serialNo);
-			WebElementOperationsWeb.park(3);
-			WebElementOperationsWeb.enterByRobot();
 			WebElementOperationsWeb.park(5);
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "NavigateToPDP");
 			ssbpdpverifydetails.ClickonProductCard();

@@ -78,4 +78,15 @@ public class SSBMyAccountMyWalletPageHelper extends GlobalExceptionHandler {
 			}
 		}
 
+		
+		public void TotalBalanceVerification() {
+			try {
+				WebElementOperationsWeb.isDisplayed(driver, MyWalletPage.getTotalBalance());
+
+			} catch (Exception e) {
+				handleOnException(
+						"Unknown error occured in displaying Total balance: " + MyWalletPage.getTotalBalance(), e);
+			}
+		}	
+		
 }

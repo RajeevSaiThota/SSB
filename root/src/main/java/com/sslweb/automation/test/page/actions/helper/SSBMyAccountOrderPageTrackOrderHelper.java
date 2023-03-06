@@ -48,7 +48,18 @@ public class SSBMyAccountOrderPageTrackOrderHelper extends GlobalExceptionHandle
 					+ OrderPageTrackOrder.getProductCardClick(), e);
 		}
 	}
-
+	String breadcrumb=null;
+	public String MyAccountBreadCrumb() {
+		try {
+			breadcrumb=WebElementOperationsWeb.getText(driver, OrderPageTrackOrder.getMyAccountBreadCrumb());
+		
+		}
+		 catch (Exception e) {
+				handleOnException("Unknown error occured while getting breadCrumb text : "
+						+ OrderPageTrackOrder.getMyAccountBreadCrumb(), e);
+			}
+		return breadcrumb;
+	}
 	// clicking on Track Order
 
 	public void ClickonTrackOrder() {

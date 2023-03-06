@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import org.openqa.selenium.WebDriver;
 
+import com.sslweb.automation.myaccountprofilepageaddingaddress.model.ProfilePageAddingAddress;
 import com.sslweb.automation.myaccountprofilepagedeletingaddress.model.ProfilePageDeletingAddress;
 import com.sslweb.automation.test.handler.GlobalExceptionHandler;
 import com.sslweb.automation.repo.ExcelRepository;
@@ -39,7 +40,14 @@ public class SSBMyAccountProfilePageDeleteAddressHelper extends GlobalExceptionH
 					e);
 		}
 	}
-
+	public void DeleteAddress() {
+		try {
+			WebElementOperationsWeb.isDisplayed(driver, ProfilePageDeletingAddress.getDeleteAddress());
+		} catch (Exception e) {
+			handleOnException("Address are not available for this user : "
+					+ ProfilePageDeletingAddress.getDeleteAddress(), e);
+		}
+	}
 	// Clicking on Delete Address
 	public void ClickonDeleteAddress() {
 		try {
@@ -61,4 +69,14 @@ public class SSBMyAccountProfilePageDeleteAddressHelper extends GlobalExceptionH
 		}
 	}
 
+	String AddressDeleteSuccessAlert=null;
+	public String DeleteAddressSuccessAlert() {
+		try {
+			AddressDeleteSuccessAlert=WebElementOperationsWeb.getText(driver, ProfilePageDeletingAddress.getDeleteAddressSuccessAlert());
+		}catch (Exception e) {
+			handleOnException("Unknown error occured while verifying success alert: "
+					+ ProfilePageDeletingAddress.getDeleteAddressSuccessAlert(), e);
+		}
+		return AddressDeleteSuccessAlert;
+	}
 }

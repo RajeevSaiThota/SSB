@@ -2,6 +2,7 @@ package com.sslweb.automation.test.page.actions;
 
 import java.util.Objects;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,7 @@ public class SSBMyAccountProfilePageAddingAddressAction extends GlobalExceptionH
 
 	private WebDriver driver = null;
 	public JavascriptExecutor js;
+	private static final Logger LOG = Logger.getLogger(SSBMyAccountProfilePageAddingAddressAction.class);
 
 	private SSBLoginFunctionalityHelper ssbloginflow;
 	private SSBMyAccountProfilePageAddingAddressHelper ssbmyaccountppaddaddress;
@@ -85,6 +87,9 @@ public class SSBMyAccountProfilePageAddingAddressAction extends GlobalExceptionH
 			WebElementOperationsWeb.park(1);
 			ssbmyaccountppaddaddress.ClickonAddnewaddressSelect();
 			WebElementOperationsWeb.park(3);
+			if(!ssbmyaccountppaddaddress.AddAddressSuccessAlert().contains("Address Added Successfully!")) {
+				LOG.error("AddAddress SuccessAlert is not displayed");
+			}
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);

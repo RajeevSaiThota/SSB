@@ -202,7 +202,7 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 					+ SSBLoginFunctionality.getUserName(), e);
 		}
 	}
-	
+	String decryptedOTP=null;
 	public String decryptusingweb(String strToDecrypt) {
 		try {
 			
@@ -212,13 +212,13 @@ public class SSBLoginFunctionalityHelper extends GlobalExceptionHandler {
 			clickOnDecryptbutton();
 			WebElementOperationsWeb.waitForPageLoad(driver, 60);
 			WebElementOperationsWeb.park(7);
-			String decryptedOTP = driver.findElement(By.cssSelector("fieldset[id='answer'] b")).getText();
+			decryptedOTP = driver.findElement(By.cssSelector("fieldset[id='answer'] b")).getText();
 			System.out.println(decryptedOTP);
-			return decryptedOTP;
 		} catch (Exception e) {
 			System.out.println("Decrypting is not working as Expected");
 		}
-		return null;
+		return decryptedOTP;
+		
 	}
 
 	// Click on Log out

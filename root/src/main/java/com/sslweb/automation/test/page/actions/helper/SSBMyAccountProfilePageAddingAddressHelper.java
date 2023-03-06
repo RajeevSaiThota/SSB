@@ -166,5 +166,16 @@ public class SSBMyAccountProfilePageAddingAddressHelper extends GlobalExceptionH
 					+ ProfilePageAddingAddress.getAddAddressSelect(), e);
 		}
 	}
+	
+	String AddressAddedSuccessAlert=null;
+	public String AddAddressSuccessAlert() {
+		try {
+		AddressAddedSuccessAlert=WebElementOperationsWeb.getText(driver, ProfilePageAddingAddress.getAddAddressSuccessAlert());
+		}catch (Exception e) {
+			handleOnException("Unknown error occured while verifying success alert: "
+					+ ProfilePageAddingAddress.getAddAddressSuccessAlert(), e);
+		}
+		return AddressAddedSuccessAlert;
+	}
 
 }

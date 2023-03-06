@@ -33,7 +33,11 @@
 					"value": "(//div[@class='MuiBox-root css-1oovyp6'])[1]",
 					"type": "XPATH"
 				},
-											
+				{
+					"key": "TotalBalance",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-zez1bs']",
+					"type": "XPATH"
+				},							
 			]
 		}
 	]

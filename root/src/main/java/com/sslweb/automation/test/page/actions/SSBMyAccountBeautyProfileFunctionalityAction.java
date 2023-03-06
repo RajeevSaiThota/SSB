@@ -56,9 +56,9 @@ public class SSBMyAccountBeautyProfileFunctionalityAction extends GlobalExceptio
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountbeautyprofilepage.ClickonBeautyProfile();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "BeautyProfilePage");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in navigating to BeautyProfilePage", e);
 		}
 	}
 
@@ -94,9 +94,9 @@ public class SSBMyAccountBeautyProfileFunctionalityAction extends GlobalExceptio
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountbeautyprofilepage.ClickonCHECKTHEMOUT();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "CatogeryFunctionality");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in verifying beauty categories", e);
 		}
 	}
 }

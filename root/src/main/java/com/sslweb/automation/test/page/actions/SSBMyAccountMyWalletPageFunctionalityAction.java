@@ -56,9 +56,10 @@ public class SSBMyAccountMyWalletPageFunctionalityAction extends GlobalException
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountmywalletpage.ClickonMyWallet();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			ssbmyaccountmywalletpage.TotalBalanceVerification();
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "MyWalletPage");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in navigating to MyWalletPage", e);
 		}
 	}
 
@@ -73,9 +74,9 @@ public class SSBMyAccountMyWalletPageFunctionalityAction extends GlobalException
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountmywalletpage.ClickonCheckBalance();
 			WebElementOperationsWeb.park(5);
-			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
+			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "CardDetailsFunctionality");
 		} catch (Exception e) {
-			handleOnException("All Fields Displayed not able found", e);
+			handleOnException("Error in navigating to CardDetailsFunctionality", e);
 		}
 	}
 }

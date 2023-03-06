@@ -27,7 +27,11 @@
 					"value": "//li[normalize-space()='Past Year']",
 					"type": "XPATH"
 				},
-											
+				{
+					"key": "MyAccountBreadCrumb",
+					"value": "//p[@class='MuiTypography-root MuiTypography-body1 css-f753rt']",
+					"type": "XPATH"
+				},							
 			]
 		}
 	]
