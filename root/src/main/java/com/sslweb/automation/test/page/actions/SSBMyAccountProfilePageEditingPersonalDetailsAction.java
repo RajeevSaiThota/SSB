@@ -85,6 +85,7 @@ public class SSBMyAccountProfilePageEditingPersonalDetailsAction extends GlobalE
 			WebElementOperationsWeb.park(5);
 			ssbmyaccountppeditprofiledetails.ClickonMakeChanges();
 			WebElementOperationsWeb.park(5);
+			ssbmyaccountppeditprofiledetails.EditPersonalDetails();
 			WebElementOperationsWeb.captureScreenShotOnPass(driver, testCaseName, "AllFieldsDisplayed");
 		} catch (Exception e) {
 			handleOnException("All Fields Displayed not able found", e);

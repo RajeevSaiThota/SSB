@@ -54,7 +54,14 @@ public class SSBMyAccountProfilePageEditingProfileHelper extends GlobalException
 					+ PersonalDetailsEdit.getPersonalDetailsClick(), e);
 		}
 	}
-
+	public void EditPersonalDetails() {
+		try {
+			WebElementOperationsWeb.isDisplayed(driver, PersonalDetailsEdit.getPersonalDetailsClick());
+		} catch (Exception e) {
+			handleOnException("Unknown error occured in displaying EditPersonalDetails button : "
+					+ PersonalDetailsEdit.getPersonalDetailsClick(), e);
+		}
+	}
 	// Clicking on X icon 
 	public void ClickonXicon() {
 		try {
